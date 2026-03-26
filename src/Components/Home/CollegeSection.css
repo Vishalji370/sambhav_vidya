@@ -1,0 +1,264 @@
+/* SECTION */
+.college {
+  padding: 0px 60px;
+  text-align: center;
+  position: relative;
+  margin-top: 0px;
+}
+
+/* heading */
+.college__heading {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #111;
+}
+
+.college__sub {
+  color: #777;
+  margin-bottom: 40px;
+}
+
+/* wrapper */
+.college__wrapper {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 20px;
+}
+
+.college__wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+/* card */
+.college__card {
+  flex: 0 0 calc(25% - 15px);
+  min-width: 260px;
+  background: #fff;
+  border-radius: 18px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 0.4s;
+  border: 1px solid #eee;
+}
+
+/* hover */
+.college__card:hover {
+  transform: translateY(-12px) scale(1.04);
+  box-shadow: 0 25px 60px rgba(255, 140, 0, 0.35);
+}
+
+/* image */
+.college__img {
+  position: relative;
+  height: 170px;
+  overflow: hidden;
+}
+
+.college__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.5s;
+}
+
+.college__card:hover img {
+  transform: scale(1.1);
+}
+
+/* overlay */
+.college__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+  opacity: 0.7;
+  transition: 0.4s;
+}
+
+/* hover content */
+.college__hover-content {
+  position: absolute;
+  bottom: 10px;
+  left: 15px;
+  color: #fff;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: 0.4s;
+}
+
+.college__card:hover .college__hover-content {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* content */
+.college__content {
+  padding: 15px;
+  text-align: left;
+}
+
+.location {
+  font-size: 0.8rem;
+  color: #888;
+}
+
+/* info */
+.college__info {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.rating {
+  color: orange;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* fees */
+.fees {
+  color: #ff6b00;
+  font-weight: bold;
+}
+
+/* actions */
+.college__actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+.college__actions svg {
+  transition: 0.3s;
+}
+
+.college__card:hover .college__actions svg {
+  transform: translateX(8px);
+  color: orange;
+}
+
+/* arrows */
+.college__arrow {
+  position: absolute;
+  top: 55%;
+  transform: translateY(-50%);
+  background: #fff;
+  border: none;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  cursor: pointer;
+  font-size: 20px;
+  z-index: 10;
+}
+
+.college__arrow.left { left: 10px; }
+.college__arrow.right { right: 10px; }
+
+.college__arrow:hover {
+  background: orange;
+  color: #fff;
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* 🔥 LARGE TABLET */
+@media (max-width: 1200px) {
+  .college {
+    padding: 40px 30px;
+  }
+
+  .college__card {
+    flex: 0 0 calc(33.33% - 14px); /* 3 cards */
+  }
+}
+
+/* 🔥 TABLET */
+@media (max-width: 992px) {
+  .college {
+    padding: 40px 20px;
+  }
+
+  .college__heading {
+    font-size: 2rem;
+  }
+
+  .college__sub {
+    font-size: 0.9rem;
+  }
+
+  .college__card {
+    flex: 0 0 calc(50% - 10px); /* 2 cards */
+  }
+
+  .college__arrow {
+    width: 38px;
+    height: 38px;
+    font-size: 16px;
+  }
+}
+
+/* 🔥 MOBILE */
+@media (max-width: 600px) {
+  .college {
+    padding: 30px 15px;
+    margin-top: 0;
+  }
+
+  .college__heading {
+    font-size: 1.6rem;
+  }
+
+  .college__sub {
+    font-size: 0.8rem;
+    margin-bottom: 20px;
+  }
+
+  .college__wrapper {
+    padding: 10px;
+    gap: 15px;
+  }
+
+  .college__card {
+    flex: 0 0 85%; /* single card scroll */
+    min-width: auto;
+  }
+
+  .college__img {
+    height: 150px;
+  }
+
+  .college__content {
+    padding: 12px;
+  }
+
+  .college__info {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .college__actions {
+    font-size: 0.85rem;
+  }
+
+  /* arrows hide (mobile swipe better) */
+  .college__arrow {
+    display: none;
+  }
+}
+
+/* 🔥 EXTRA SMALL */
+@media (max-width: 400px) {
+  .college__heading {
+    font-size: 1.4rem;
+  }
+
+  .college__card {
+    flex: 0 0 90%;
+  }
+}

@@ -1,0 +1,97 @@
+/* FOOTER */
+.footer {
+  background: #4f4b10;
+  color: #fff;
+  padding: 40px 60px;
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr 1fr;
+  gap: 40px;
+}
+
+/* LEFT */
+.footer__left .logo {
+  font-size: 1.8rem;
+  font-weight: 800;
+}
+
+.footer__left .logo span {
+  color: orange;
+}
+
+.tagline {
+  margin: 15px 0;
+  color: #ccc;
+}
+
+.tagline span {
+  color: orange;
+  font-weight: 600;
+}
+
+/* contact */
+.footer__contact p {
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+}
+
+.phone {
+  background: rgba(255,140,0,0.2);
+  padding: 8px 14px;
+  border-radius: 8px;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+/* COLUMN */
+.footer__col h3 {
+  margin-bottom: 15px;
+  color: orange;
+  font-size: 1rem;
+}
+
+/* list */
+.footer__col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer__col li {
+  margin-bottom: 10px;
+  cursor: pointer;
+  color: #bbb;
+  transition: 0.3s;
+}
+
+/* hover */
+.footer__col li:hover {
+  color: orange;
+  transform: translateX(5px);
+}
+
+/* view more */
+.footer__col span {
+  display: inline-block;
+  margin-top: 10px;
+  color: orange;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.footer__col span:hover {
+  transform: translateX(6px);
+}
+
+/* 🔥 RESPONSIVE */
+@media (max-width: 900px) {
+  .footer {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 500px) {
+  .footer {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}

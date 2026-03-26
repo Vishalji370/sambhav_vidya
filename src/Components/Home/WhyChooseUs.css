@@ -1,0 +1,273 @@
+.why {
+  padding: 0px 80px;
+  text-align: center;
+  background: #fff;
+  margin-top: -10px;
+}
+
+/* heading */
+.why__heading {
+  font-size: 2.5rem;
+  font-weight: 800;
+}
+
+.why__sub {
+  color: #777;
+  margin-bottom: 40px;
+}
+
+/* layout */
+.why__container {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+/* left */
+.why__left {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.why__img-box {
+  width: 420px;
+  height: 420px;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+
+  /* Right side tilt */
+  transform: perspective(1000px) rotateY(12deg);
+
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.why__img-box img {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.why__img-box::before {
+  content: "";
+  position: absolute;
+  inset: -35%;
+  z-index: 1;
+  background:
+    radial-gradient(circle at 30% 35%, rgba(255, 140, 0, 0.35), transparent 55%),
+    radial-gradient(circle at 70% 65%, rgba(255, 179, 0, 0.25), transparent 55%),
+    radial-gradient(circle at 55% 30%, rgba(46, 196, 151, 0.18), transparent 60%);
+  filter: blur(18px);
+  opacity: 0.9;
+  animation: whyGlowFloat 6s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.why__img-box::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  background: linear-gradient(135deg, rgba(255, 140, 0, 0.08), rgba(255, 255, 255, 0));
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
+
+.why__img-box:hover::before {
+  animation-duration: 4.2s;
+  opacity: 1;
+}
+
+@keyframes whyGlowFloat {
+  0% {
+    transform: translate3d(-10px, 10px, 0) rotate(0deg) scale(1);
+  }
+  50% {
+    transform: translate3d(14px, -12px, 0) rotate(10deg) scale(1.08);
+  }
+  100% {
+    transform: translate3d(-10px, 10px, 0) rotate(0deg) scale(1);
+  }
+}
+
+.why__img-box:hover {
+  transform: perspective(1000px) rotateY(18deg) translateY(-8px) scale(1.03);
+  box-shadow: 0 18px 40px rgba(255, 140, 0, 0.25);
+}
+
+/* right */
+.why__right {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+/* CARD */
+.why__card {
+  padding: 25px;
+  border-radius: 16px;
+  border: 1px solid #eee;
+  text-align: center; /* 🔥 center */
+  transition: 0.4s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ICON CENTER */
+.why__icon {
+  font-size: 2rem;
+  color: orange;
+  margin-bottom: 12px;
+  transition: 0.6s;
+}
+
+/* 🔥 HOVER EFFECT */
+.why__card:hover {
+  background: linear-gradient(135deg, #ff8c00b2, #ffb300c7);
+  color: #fff;
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 25px 50px rgba(255, 140, 0, 0.4);
+}
+
+/* text white on hover */
+.why__card:hover p,
+.why__card:hover h3 {
+  color: #fff;
+}
+
+/* 🔥 ICON ROTATE */
+.why__card:hover .why__icon {
+  transform: rotateY(360deg) scale(1.2);
+  color: #fff;
+}
+
+/* ─────────────────────────────
+   TABLET (≤ 1024px)
+───────────────────────────── */
+@media (max-width: 1024px) {
+
+  .why {
+    padding: 0 40px;
+  }
+
+  .why__heading {
+    font-size: 2.1rem;
+  }
+
+  .why__container {
+    gap: 30px;
+  }
+
+  .why__img-box {
+    width: 320px;
+    height: 320px;
+  }
+
+  .why__right {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+}
+
+
+/* ─────────────────────────────
+   MOBILE (≤ 768px)
+───────────────────────────── */
+@media (max-width: 768px) {
+
+  .why {
+    padding: 0 20px;
+  }
+
+  .why__heading {
+    font-size: 1.7rem;
+  }
+
+  .why__sub {
+    font-size: 0.9rem;
+    margin-bottom: 30px;
+  }
+
+  /* 🔥 STACK LAYOUT */
+  .why__container {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  /* 🔥 IMAGE CENTER */
+  .why__left {
+    width: 100%;
+  }
+
+  .why__img-box {
+    width: 100%;
+    max-width: 320px;
+    height: 300px;
+
+    /* 🔥 remove tilt */
+    transform: none;
+  }
+
+  .why__img-box:hover {
+    transform: scale(1.03);
+  }
+
+  /* 🔥 ALWAYS 2 CARDS */
+  .why__right {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 14px;
+  }
+
+  .why__card {
+    padding: 16px;
+  }
+
+  .why__icon {
+    font-size: 1.6rem;
+  }
+}
+
+
+/* ─────────────────────────────
+   SMALL MOBILE (≤ 480px)
+───────────────────────────── */
+@media (max-width: 480px) {
+
+  .why {
+    padding: 0 15px;
+  }
+
+  .why__heading {
+    font-size: 1.4rem;
+  }
+
+  .why__sub {
+    font-size: 0.8rem;
+  }
+
+  /* 🔥 STILL 2 CARDS (FORCE) */
+  .why__right {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px;
+  }
+
+  .why__card {
+    padding: 14px;
+  }
+
+  .why__icon {
+    font-size: 1.3rem;
+  }
+
+  .why__img-box {
+    height: 260px;
+  }
+}

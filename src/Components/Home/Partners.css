@@ -1,0 +1,171 @@
+/* SECTION */
+.partners {
+  padding: 20px 60px;
+  text-align: center;
+  background: #fff;
+}
+
+/* heading */
+.partners__heading {
+  font-size: 2.3rem;
+  font-weight: 800;
+  color: #111;
+}
+
+.partners__sub {
+  color: #777;
+  margin-bottom: 40px;
+}
+
+/* slider */
+.partners__slider {
+  overflow: hidden;
+  position: relative;
+}
+
+/* 🔥 track (NO CSS animation now) */
+.partners__track {
+  display: flex;
+  gap: 40px;
+  width: max-content;
+}
+
+/* logo */
+.partners__logo {
+  min-width: 140px;
+  height: 80px;
+  background: #fff;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.3s;
+  border: 1px solid #eee;
+}
+
+/* image */
+.partners__logo img {
+  max-width: 90px;
+  max-height: 50px;
+  object-fit: contain;
+  transition: 0.3s;
+}
+
+/* hover */
+.partners__logo:hover {
+  transform: translateY(-8px) scale(1.1);
+  box-shadow: 0 15px 40px rgba(255, 140, 0, 0.3);
+  border-color: orange;
+}
+
+.partners__logo:hover img {
+  transform: scale(1.1);
+}
+
+/* ─────────────────────────────
+   TABLET (≤ 1024px)
+───────────────────────────── */
+@media (max-width: 1024px) {
+
+  .partners {
+    padding: 20px 40px;
+  }
+
+  .partners__heading {
+    font-size: 2rem;
+  }
+
+  .partners__sub {
+    font-size: 0.95rem;
+    margin-bottom: 30px;
+  }
+
+  .partners__track {
+    gap: 30px;
+  }
+
+  .partners__logo {
+    min-width: 120px;
+    height: 70px;
+  }
+
+  .partners__logo img {
+    max-width: 80px;
+    max-height: 45px;
+  }
+}
+
+
+/* ─────────────────────────────
+   MOBILE (≤ 768px)
+───────────────────────────── */
+@media (max-width: 768px) {
+
+  .partners {
+    padding: 20px 20px;
+  }
+
+  .partners__heading {
+    font-size: 1.7rem;
+  }
+
+  .partners__sub {
+    font-size: 0.85rem;
+    margin-bottom: 25px;
+  }
+
+  /* 🔥 SCROLL ENABLE */
+  .partners__slider {
+    overflow-x: auto;
+  }
+
+  .partners__track {
+    gap: 20px;
+    padding-bottom: 10px;
+  }
+
+  .partners__logo {
+    min-width: 100px;
+    height: 60px;
+  }
+
+  .partners__logo img {
+    max-width: 70px;
+    max-height: 40px;
+  }
+}
+
+
+/* ─────────────────────────────
+   SMALL MOBILE (≤ 480px)
+───────────────────────────── */
+@media (max-width: 480px) {
+
+  .partners {
+    padding: 20px 15px;
+  }
+
+  .partners__heading {
+    font-size: 1.4rem;
+  }
+
+  .partners__sub {
+    font-size: 0.8rem;
+  }
+
+  .partners__track {
+    gap: 16px;
+  }
+
+  .partners__logo {
+    min-width: 90px;
+    height: 55px;
+    border-radius: 10px;
+  }
+
+  .partners__logo img {
+    max-width: 60px;
+    max-height: 35px;
+  }
+}
