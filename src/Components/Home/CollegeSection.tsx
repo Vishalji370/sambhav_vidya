@@ -1,49 +1,50 @@
 import React, { useRef, useEffect } from "react";
-import { FaArrowRight, FaStar } from "react-icons/fa";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./CollegeSection.css";
 
 const data = [
   {
-    name: "SRCC College",
-    location: "New Delhi",
-    course: "B.Com (Hons.)",
-    fees: "1.25 Lacs",
-    rating: "4.3",
-    img: "https://images.unsplash.com/photo-1562774053-701939374585",
+    name: "FPV Drone Flying Training",
+    location: "Learn to safely fly FPV drones in Stabilized, Horizon, and Acro modes with simulator practice and real-world flying.",
+    course: "Duration: 3 Days",
+ 
+    img: "/Drone/Card 1.jpg",
   },
   {
-    name: "IHM Delhi",
-    location: "Delhi NCR",
-    course: "B.Sc Hospitality",
-    fees: "4.93 Lacs",
-    rating: "4.1",
-    img: "https://images.unsplash.com/photo-1596495578065-6e0763fa1178",
+    name: "Small RPC Drone Pilot Training",
+    location: "DGCA-certified training to become a professional remote pilot for drones up to 25 kg with practical flying sessions",
+    course: "Duration: 5 Days",
+  
+    img: "/Drone/Card 2.jpeg",
   },
   {
-    name: "SPA Delhi",
-    location: "New Delhi",
-    course: "B.Arch",
-    fees: "5.22 Lacs",
-    rating: "3.8",
-    img: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b",
+    name: "Drone Repair & Maintenance",
+    location: "Learn drone hardware, troubleshooting, and repair techniques to maintain and service professional drones.",
+    course: "Duration: 6 Days",
+
+    img: "/Drone/Card 3.jpg",
   },
   {
-    name: "NLU Delhi",
-    location: "Delhi NCR",
-    course: "LLB",
-    fees: "3.2 Lacs",
-    rating: "4.5",
-    img: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1",
+    name: "Drone GIS & Mapping Course",
+    location: "Learn drone data processing, aerial mapping, terrain analysis, and GIS workflows for surveying and infrastructure projects.",
+    course: "Duration: Professional Course",
+ 
+    img: "/Drone/Card 4.jpeg",
   },
   {
-    name: "DU College",
-    location: "Delhi",
-    course: "BA",
-    fees: "1.8 Lacs",
-    rating: "4.0",
-    img: "https://images.unsplash.com/photo-1588072432836-e10032774350",
+    name: "Drone Instructor Pilot Training (TTT)",
+    location: "Advanced training to become eligible for DGCA Remote Pilot Instructor certification and drone training programs.",
+    course: "Duration: 4 Days",
+
+    img: "/Drone/Card 5.jpg",
+  },
+    {
+    name: "Medium RPC Drone Pilot Training",
+    location: "DGCA-certified drone pilot training for operating medium-class drones up to 50 kg with professional flying practice.",
+    course: "Duration: 5 Days",
+
+    img: "/Drone/Card 6.jpeg",
   },
 ];
 
@@ -100,9 +101,9 @@ const CollegeSection = () => {
     <section className="college" ref={sectionRef}>
 
       {/* HEADING */}
-      <h2 className="college__heading">Top Colleges For You</h2>
+      <h2 className="college__heading">  Certified Drone Training Programs</h2>
       <p className="college__sub">
-        Explore best colleges with courses & fees
+      Explore industry-focused drone training programs designed for professional <br />pilots, agriculture, mapping, and aerial operations.
       </p>
 
       {/* ARROWS */}
@@ -137,20 +138,7 @@ const CollegeSection = () => {
             <div className="college__content">
               <h3>{item.name}</h3>
               <p className="location">{item.location}</p>
-
-              <div className="college__info">
-                <span>{item.course}</span>
-                <span className="rating">
-                  <FaStar /> {item.rating}
-                </span>
-              </div>
-
-              <p className="fees">{item.fees}</p>
-
-              <div className="college__actions">
-                <span>View Details</span>
-                <FaArrowRight />
-              </div>
+              <p className="college__duration">{item.course}</p>
             </div>
           </div>
         ))}

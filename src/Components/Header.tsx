@@ -7,7 +7,7 @@ const navLinks = [
   { label: "Home",     path: "/" },
   { label: "Courses",  path: "/courses" },
   { label: "Partners", path: "/partners" },
-  { label: "Blog",     path: "/blog" },
+  //{ label: "Blog",     path: "/blog" },
   { label: "About",    path: "/about" },
   { label: "Contact",  path: "/contact" },
 ];
@@ -75,7 +75,7 @@ const Header = () => {
         >
           <div className="logo__icon">E</div>
           <span className="logo__text">
-            Edu<span>Spark</span>
+           Sambhav <span>Vidya</span>
           </span>
         </Link>
 

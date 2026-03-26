@@ -6,28 +6,58 @@ import "./Partners.css";
 const partners = [
   {
     name: "Delhi University",
-    logo: "https://upload.wikimedia.org/wikipedia/en/8/8e/University_of_Delhi_Logo.svg",
+    logo: "/Univpng/img1.png",
     path: "/du",
   },
   {
     name: "IIT Delhi",
-    logo: "https://upload.wikimedia.org/wikipedia/en/1/1d/IIT_Delhi_Logo.svg",
+    logo: "/Univpng/img2.png",
     path: "/iit-delhi",
   },
   {
     name: "JNU",
-    logo: "https://upload.wikimedia.org/wikipedia/en/6/69/Jawaharlal_Nehru_University_Logo.png",
+    logo: "/Univpng/img3.png",
     path: "/jnu",
   },
   {
     name: "Jamia Millia",
-    logo: "https://upload.wikimedia.org/wikipedia/en/5/5a/Jamia_Millia_Islamia_Logo.png",
+    logo: "/Univpng/img4.png",
     path: "/jamia",
   },
   {
     name: "Amity University",
-    logo: "https://upload.wikimedia.org/wikipedia/en/f/f3/Amity_University_logo.png",
+    logo: "/Univpng/img5.jpg",
     path: "/amity",
+  },
+    {
+    name: "Delhi University",
+    logo: "/Univpng/img6.png",
+    path: "/du",
+  },
+  {
+    name: "IIT Delhi",
+    logo: "/Univpng/img7.png",
+    path: "/iit-delhi",
+  },
+  {
+    name: "JNU",
+    logo: "/Univpng/img8.png",
+    path: "/jnu",
+  },
+  {
+    name: "Jamia Millia",
+    logo: "/Univpng/img9.png",
+    path: "/jamia",
+  },
+  {
+    name: "Amity University",
+    logo: "/Univpng/img10.png",
+    path: "/amity",
+  },
+    {
+    name: "manav",
+    logo: "/Univpng/img11.png",
+    path: "/manav",
   },
 ];
 
@@ -71,11 +101,11 @@ const PartnersSection = () => {
     <section className="partners" ref={sectionRef}>
       
       <h2 className="partners__heading" ref={headingRef}>
-        Our Trusted Partners
+        Our Trusted University Partners
       </h2>
 
       <p className="partners__sub" ref={subRef}>
-        Collaborating with top universities across India
+     Partnering with leading universities to bring trusted programs to students.
       </p>
 
       {/* 🔥 HOVER PAUSE */}

@@ -41,18 +41,21 @@
   cursor: pointer;
   transition: 0.4s;
   border: 1px solid #eee;
+  display: flex;
+  flex-direction: column;
+  height: 300px;
 }
 
 /* hover */
 .college__card:hover {
   transform: translateY(-12px) scale(1.04);
-  box-shadow: 0 25px 60px rgba(255, 140, 0, 0.35);
+
 }
 
 /* image */
 .college__img {
   position: relative;
-  height: 170px;
+  height: 220px;
   overflow: hidden;
 }
 
@@ -94,51 +97,32 @@
 
 /* content */
 .college__content {
-  padding: 15px;
-  text-align: left;
+
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.college__content h3 {
+  margin: 0;
+  min-height: 2em; /* compact title block */
+  line-height: 1.25;
 }
 
 .location {
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   color: #888;
+  margin: 4px 0;
+  min-height: 3em; /* keep alignment but reduce gap */
+  line-height: 1.4;
 }
 
-/* info */
-.college__info {
-  display: flex;
-  justify-content: space-between;
-  margin: 10px 0;
-}
-
-.rating {
-  color: orange;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
-
-/* fees */
-.fees {
+.college__duration {
+  margin: 4px 0 0;
   color: #ff6b00;
-  font-weight: bold;
-}
-
-/* actions */
-.college__actions {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 10px;
-  font-weight: 600;
-}
-
-.college__actions svg {
-  transition: 0.3s;
-}
-
-.college__card:hover .college__actions svg {
-  transform: translateX(8px);
-  color: orange;
+  font-weight: 700;
+  font-size: 0.9rem;
 }
 
 /* arrows */
@@ -230,20 +214,11 @@
   }
 
   .college__img {
-    height: 150px;
+    height: 170px; /* keep image size consistent */
   }
 
   .college__content {
-    padding: 12px;
-  }
-
-  .college__info {
-    flex-direction: column;
-    gap: 5px;
-  }
-
-  .college__actions {
-    font-size: 0.85rem;
+    padding: 11px 10px 9px;
   }
 
   /* arrows hide (mobile swipe better) */

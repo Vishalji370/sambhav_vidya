@@ -1,9 +1,12 @@
 import React from 'react'
+import AboutHero from '../Components/About/AboutHero'
+import MissionVision from '../Components/About/MissionVision'
 
 const About = () => {
   return (
     <div>
-      <h1>this is the about page </h1>
+     <AboutHero />
+     <MissionVision />
     </div>
   )
 }

@@ -19,8 +19,10 @@
 
 /* slider */
 .partners__slider {
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: visible;
   position: relative;
+  padding-top: 12px; /* space for hover lift */
 }
 
 /* 🔥 track (NO CSS animation now) */
@@ -28,6 +30,7 @@
   display: flex;
   gap: 40px;
   width: max-content;
+  padding-top: 6px; /* prevent top clipping on hover */
 }
 
 /* logo */

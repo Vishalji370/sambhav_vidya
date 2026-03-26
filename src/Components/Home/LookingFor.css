@@ -1,6 +1,5 @@
 /* ── LOOKING FOR SECTION ── */
 .lf {
-  background: #ffffff;
   padding: 60px 72px 90px;
   position: relative;
   overflow: hidden;
@@ -10,7 +9,7 @@
 .lf__bg-pattern {
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(circle, rgba(255, 107, 0, 0.06) 1px, transparent 1px);
+
   background-size: 32px 32px;
   pointer-events: none;
 }
@@ -27,9 +26,8 @@
   display: inline-flex;
   align-items: center;
   gap: 7px;
-  background: #fff5ee;
-  border: 1px solid rgba(255, 107, 0, 0.2);
-  color: #ff6b00;
+
+  color: orange;
   font-size: 0.78rem;
   font-weight: 600;
   padding: 5px 14px;
@@ -41,7 +39,7 @@
 .lf__badge-dot {
   width: 7px;
   height: 7px;
-  background: #ff6b00;
+  background: ;
   border-radius: 50%;
   animation: lf-pulse 1.6s ease-in-out infinite;
 }
@@ -60,7 +58,7 @@
   line-height: 1.2;
 }
 
-.lf__heading span { color: #ff6b00; }
+.lf__heading span { color: orange; }
 
 .lf__sub {
   font-size: 0.97rem;

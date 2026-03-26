@@ -22,16 +22,38 @@ export default function ContactPage() {
     );
   }, []);
 
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  const form = e.target;
+
+ const data = {
+  name: form.name.value,
+  organization: form.organization.value,
+  phone: form.phone.value,
+  email: form.email.value,
+  subject: form.subject.value,
+  message: form.message.value,
+};
+
+  await fetch("https://script.google.com/macros/s/AKfycbz-uT72dWVRXsa40wacVw9ZxmmO4ZV7oMIz-qtm7NS-rmH6OUhctUmMn69oekB4tHtHlg/exec", {
+    method: "POST",
+    body: JSON.stringify(data),
+  });
+
+  alert("Message Sent ✅");
+  form.reset();
+};
+
   return (
     <div className="unique-contact-page" ref={containerRef}>
       {/* HERO */}
       <section className="unique-contact-hero">
         <div className="hero-overlay"></div>
         <div className="hero-content">
-          <h1>Connect With Sambha Vidya</h1>
+          <h1>Connect With Sambhav Vidya</h1>
           <p>
-            Empowering your learning journey with expert guidance,
-            career-focused programs, and personalized support.
+            Get guidance on courses and universities, or explore partnership opportunities with our education platform.
           </p>
         </div>
       </section>
@@ -45,20 +67,20 @@ export default function ContactPage() {
             <h2 className="section-title">Get in Touch</h2>
 
             <p className="section-subtitle">
-              Have questions about courses, admissions, or career paths?
-              Our team is here to guide you every step of the way.
+              Have questions about courses, admissions, or career path? Whether you're a student seeking guidance or an institution exploring collaboration, our team is here to assist you.
             </p>
 
             <div className="unique-contact-item">
-              📍
+            
               <div>
-                <h4>Our Campus</h4>
-                <span>Varanasi, Uttar Pradesh, India</span>
+                <h4>Our Office</h4>
+                <span>Address- plot no 1 sector 27 
+Golf course road Gurgaon.</span>
               </div>
             </div>
 
             <div className="unique-contact-item">
-              📧
+            
               <div>
                 <h4>Email Support</h4>
                 <span>support@sambhavidya.com</span>
@@ -66,7 +88,7 @@ export default function ContactPage() {
             </div>
 
             <div className="unique-contact-item">
-              📞
+              
               <div>
                 <h4>Call Us</h4>
                 <span>+91 9876543210</span>
@@ -74,31 +96,41 @@ export default function ContactPage() {
             </div>
 
             {/* SOCIAL ICONS */}
-            <div className="unique-social-icons">
-              <FaGlobe />
-              <FaFacebook />
-              <FaInstagram />
-              <FaTwitter />
-            </div>
+            <div className="follow-section">
+  <h3> Follow Us</h3>
+
+  <p>
+    Stay connected with us for updates on courses, universities,
+    and education opportunities.
+  </p>
+
+  {/* SOCIAL ICONS */}
+  <div className="unique-social-icons">
+    <FaGlobe />
+    <FaFacebook />
+    <FaInstagram />
+    <FaTwitter />
+  </div>
+</div>
           </div>
 
           {/* RIGHT */}
           <div className="unique-contact-right">
-            <h2 className="section-title">Send us a message</h2>
+            <h2 className="section-title">Send Us a Message</h2>
 
-            <form className="unique-contact-form">
+           <form className="unique-contact-form" onSubmit={handleSubmit}>
               <div className="form-row">
-                <input type="text" placeholder="Your Name" />
-                <input type="text" placeholder="Organization (Optional)" />
+                <input name="name" type="text" placeholder="Your Name" />
+                <input name="organization" type="text" placeholder="Organization / Institution (Optional)" />
               </div>
 
               <div className="form-row">
-                <input type="tel" placeholder="Phone Number" />
-                <input type="email" placeholder="Email Address" />
+                <input name="phone" type="tel" placeholder="Phone Number" />
+                <input name="email" type="email" placeholder="Email Address" />
               </div>
 
-              <input type="text" placeholder="Subject" />
-              <textarea placeholder="Write your message..."></textarea>
+              <input name="subject" type="text" placeholder="Subject" />
+              <textarea name="message" placeholder="Write your message, inquiry, or partnership request."></textarea>
 
               <button className="unique-send-btn">Send Message</button>
             </form>
@@ -110,17 +142,22 @@ export default function ContactPage() {
       <section className="unique-map-section">
         <div className="map-container">
           <div className="map-header">
-            <h2>Visit Our Campus</h2>
-            <p>Experience Sambha Vidya in the heart of Varanasi</p>
+            <h2>Visit Our Office</h2>
+            <p>Meet our team and learn how we help students find the right courses and universities.</p>
           </div>
 
-          <div className="map-frame">
-            <iframe
-              title="map"
-              src="https://www.google.com/maps/embed?pb=!1m18..."
-              loading="lazy"
-            ></iframe>
-          </div>
+         <div className="map-frame">
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3507.4621422852706!2d77.08884048100472!3d28.465625813245452!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d18d0fdd1e985%3A0x1fa938f40a8664e5!2sF13%2F2%2C%201%2C%20Sector%2027%2C%20Gurugram%2C%20Haryana%20122009!5e0!3m2!1sen!2sin!4v1774547838149!5m2!1sen!2sin"
+    width="100%"
+    height="100%"
+    style={{ border: 0 }}
+    allowFullScreen=""
+    loading="lazy"
+    referrerPolicy="no-referrer-when-downgrade"
+    title="Google Map"
+  ></iframe>
+</div>
         </div>
       </section>
     </div>

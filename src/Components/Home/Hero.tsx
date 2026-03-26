@@ -153,7 +153,7 @@ const Hero = () => {
          Discover the Right Course & <br /> University for
          <br />
           <span className="hero__heading--accent">
-            -<span ref={wordRef}>{rotatingWords[wordIndex]}</span>
+            - <span ref={wordRef}>{rotatingWords[wordIndex]}</span>
           </span>
         </h1>
 
@@ -163,7 +163,7 @@ const Hero = () => {
 
         <div className="hero__btns" ref={btnsRef}>
           <a href="/courses" className="hero__btn hero__btn--primary">
-           Explore Courses →
+           Explore Courses 
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
               <path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
@@ -205,16 +205,10 @@ const Hero = () => {
         />
 
         {/* Floating badge */}
-        <div className="hero__float-badge" ref={floatRef}>
-          <span className="hero__float-icon">✓</span>
-          <div>
-            <div className="hero__float-title">Best Platform</div>
-            <div className="hero__float-sub">Top Rated 2024</div>
-          </div>
-        </div>
+     
 
         {/* Google-style floating dot */}
-        <div className="hero__gdot">G</div>
+       
       </div>
     </section>
   );

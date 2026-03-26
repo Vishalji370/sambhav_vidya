@@ -11,31 +11,28 @@ const cards = [
     id: "courses",
     icon: <FaBook />,
     title: "Courses",
-    desc: "Explore thousands of online & offline courses across all streams.",
+    desc: "Learn from top online courses across diverse subjects and build skills for your career.",
     path: "/courses",
     type: "link",
-    color: "#ff6b00",
-    bg: "#fff5ee",
+
   },
   {
     id: "colleges",
     icon: <FaUniversity />,
-    title: "Colleges",
-    desc: "Find top colleges, compare rankings & admission details.",
+    title: "Universities",
+    desc: "Explore top universities and discover programs that support your academic journey.",
     path: "/colleges",
     type: "link",
-    color: "#2ec497",
-    bg: "#f0fdf8",
+
   },
   {
     id: "career",
     icon: <FaRocket />,
-    title: "Get Career Suggestion",
-    desc: "Not sure what to choose? Get personalized career guidance.",
+    title: "Career Guidance",
+    desc: "Get personalized career suggestions based on your interests and future goals.",
     path: null,
     type: "popup",
-    color: "#ffaa00",
-    bg: "#fffbee",
+  
   },
 ];
 
@@ -136,21 +133,15 @@ const LookingFor = () => {
           <h2 className="lf__heading">
             Find Your Perfect <span>Path</span>
           </h2>
-          <p className="lf__sub">
-            Search courses, colleges or get a personalised career suggestion — all in one place.
-          </p>
         </div>
 
         {/* ── Search Bar ── */}
         <div className="lf__search-wrap" ref={searchRef}>
           <div className="lf__search">
-            <svg className="lf__search-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
-              <circle cx="9" cy="9" r="6" stroke="#ff6b00" strokeWidth="2"/>
-              <path d="M13.5 13.5L17 17" stroke="#ff6b00" strokeWidth="2" strokeLinecap="round"/>
-            </svg>
+      
             <input
               type="text"
-              placeholder="Search courses, colleges, careers..."
+              placeholder="Search courses, colleges, careers paths..."
               className="lf__search-input"
             />
             <button className="lf__search-btn">Search</button>

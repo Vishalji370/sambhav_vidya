@@ -50,6 +50,7 @@
 /* QUESTION */
 .faq__question-btn {
   width: 100%;
+  box-sizing: border-box;
   border: 0;
   text-align: left;
   font: inherit;
@@ -65,7 +66,14 @@
   border-radius: 10px;
 }
 
+.faq__question-btn span {
+  flex: 1;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
 .faq__chevron {
+  flex-shrink: 0;
   font-size: 0.9rem;
   color: #ff8c00;
   transition: transform 0.25s ease;
@@ -76,6 +84,8 @@
   font-size: 0.8rem;
   color: #666;
   display: none;
+  /* Question button ke inner left padding ke approx align ke liye */
+  padding-left: 12px;
 }
 
 .faq__item.active p {

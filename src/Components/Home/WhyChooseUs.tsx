@@ -8,22 +8,22 @@ const features = [
   {
     icon: <FaUserGraduate />,
     title: "Expert Guidance",
-    desc: "Get mentorship from top educators & industry experts.",
+    desc: "Get reliable guidance to choose the right course and university for your future.",
   },
   {
     icon: <FaLaptopCode />,
     title: "Smart Learning",
-    desc: "Interactive courses with real-time progress tracking.",
+    desc: "Explore courses and universities easily with a platform designed for students.",
   },
   {
     icon: <FaChartLine />,
     title: "Career Growth",
-    desc: "Build strong career paths with real-world skills.",
+    desc: "Discover programs that align with your interests and long-term career goals.",
   },
   {
     icon: <FaHeadset />,
     title: "24/7 Support",
-    desc: "We’re always here to help you anytime.",
+    desc: "Our team is here to assist you throughout your education journey.",
   },
 ];
 
@@ -74,7 +74,7 @@ const WhyChooseUs = () => {
 
       <h2 className="why__heading">Why Choose Us</h2>
       <p className="why__sub">
-        We provide the best learning experience for your future
+        Helping students discover the right courses, universities, and career opportunities.
       </p>
 
       <div className="why__container">

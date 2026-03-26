@@ -4,11 +4,11 @@ import { FaChevronDown } from "react-icons/fa";
 import "./FAQ.css";
 
 const faqs = [
-  { q: "What courses do you offer?", a: "We provide a wide range of courses." },
-  { q: "How can I enroll?", a: "You can enroll directly from our website." },
-  { q: "Do you provide certificates?", a: "Yes, we provide certificates." },
-  { q: "Is there free trial?", a: "Yes, free trial available." },
-  { q: "Do you provide support?", a: "24/7 support is available." },
+  { q: "What courses do you offer?", a: "We offer a variety of online courses across multiple streams along with specialized programs such as drone pilot training and technical skill development." },
+  { q: "How can I enroll in a course or training program?", a: "You can explore courses or training programs on our platform, select the one that suits your interests, and follow the enrollment process provided on the course page." },
+  { q: "Do your programs provide certification?", a: "Yes, many programs provide recognized certifications upon successful completion of the course or training." },
+  { q: "Who can join the drone training programs?", a: "Drone training programs are open to individuals who meet the eligibility criteria such as minimum education requirements and age guidelines specified for each course." },
+  { q: "Can I get guidance to choose the right course or program?", a: "Yes, we offer guidance to help you choose the right course, university, or training program based on your interests and career goals." },
 ];
 
 const FAQSection = () => {

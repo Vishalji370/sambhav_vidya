@@ -1,0 +1,292 @@
+.about-hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 8%;
+  /* BACKGROUND IMAGE */
+  background-image: url("/img.png"); /* yaha apni image ka path do */
+  background-size: cover;        /* full cover kare */
+  background-position: center;   /* center me rahe */
+  background-repeat: no-repeat;
+}
+
+/* LEFT */
+.about-hero .hero-left {
+  width: 50%;
+}
+
+.about-hero .tag {
+  color: orange;
+
+  letter-spacing: 1px;
+}
+
+.about-hero .hero-text h1 {
+  font-size: 64px;
+  font-weight: 800;
+  color: #000;
+  line-height: 1.2;
+}
+
+.about-hero .hero-text span {
+  color: orange;
+}
+
+.about-hero .desc {
+  color: #777;
+  margin-top: 15px;
+  max-width: 400px;
+}
+
+/* BUTTON */
+.about-hero .hero-buttons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-top: 25px;
+}
+
+.about-hero .btn {
+  background: linear-gradient(45deg, #ff4d00, #ffa500);
+  border: none;
+  color: white;
+  padding: 14px 28px;
+  border-radius: 30px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* WATCH */
+.about-hero .watch {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.about-hero .watch img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+/* RIGHT */
+.about-hero .hero-right {
+  position: relative;
+}
+
+/* MAIN CIRCLE */
+.about-hero .circle {
+  width: 420px;
+  height: 420px;
+  background: linear-gradient(135deg, #ffcc70, #ff8c42);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.about-hero .circle img {
+  width: 110%;
+}
+
+/* FLOAT ICONS */
+.about-hero .icon {
+  position: absolute;
+  background: white;
+  padding: 12px;
+  border-radius: 50%;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.about-hero .icon1 {
+  top: 20%;
+  right: -20px;
+}
+
+.about-hero .icon2 {
+  top: -20px;
+  left: 50%;
+}
+
+.about-hero .icon3 {
+  bottom: 10%;
+  right: 20%;
+}
+
+/* ARROWS */
+.about-hero .arrow {
+  position: absolute;
+  font-size: 40px;
+  color: #ff8c42;
+}
+
+.about-hero .arrow1 {
+  top: 30%;
+  left: -80px;
+}
+
+.about-hero .arrow2 {
+  bottom: 20%;
+  left: -60px;
+}
+
+/* ========================= */
+/* GLOBAL FIX */
+/* ========================= */
+* {
+  box-sizing: border-box;
+}
+
+.about-hero {
+  flex-wrap: wrap;
+}
+
+/* ========================= */
+/* 💻 TABLET (992px) */
+/* ========================= */
+@media (max-width: 992px) {
+
+  .about-hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 5%;
+  }
+
+  .about-hero .hero-left {
+    width: 100%;
+  }
+
+  .about-hero .hero-text h1 {
+    font-size: 42px;
+  }
+
+  .about-hero .desc {
+    margin: 15px auto;
+  }
+
+  .about-hero .hero-buttons {
+    justify-content: center;
+  }
+
+  .about-hero .hero-right {
+    margin-top: 40px;
+  }
+
+  .about-hero .circle {
+    width: 320px;
+    height: 320px;
+  }
+
+  .about-hero .arrow1,
+  .about-hero .arrow2 {
+    display: none; /* 🔥 arrows hide (safe UI) */
+  }
+}
+
+/* ========================= */
+/* 📱 MOBILE (768px) */
+/* ========================= */
+@media (max-width: 768px) {
+
+  .about-hero {
+    padding: 30px 20px;
+  }
+
+  .about-hero .hero-text h1 {
+    font-size: 32px;
+    line-height: 1.3;
+  }
+
+  .about-hero .desc {
+    font-size: 14px;
+    max-width: 100%;
+  }
+
+  .about-hero .btn {
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+
+  .about-hero .hero-buttons {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .about-hero .watch img {
+    width: 35px;
+    height: 35px;
+  }
+
+  .about-hero .circle {
+    width: 260px;
+    height: 260px;
+  }
+
+  .about-hero .circle img {
+    width: 120%;
+  }
+
+  /* ICON FIX */
+  .about-hero .icon {
+    padding: 8px;
+  }
+
+  .about-hero .icon1 {
+    top: 10%;
+    right: -10px;
+  }
+
+  .about-hero .icon2 {
+    top: -10px;
+    left: 45%;
+  }
+
+  .about-hero .icon3 {
+    bottom: 5%;
+    right: 10%;
+  }
+}
+
+/* ========================= */
+/* 📱 SMALL MOBILE (480px) */
+/* ========================= */
+@media (max-width: 480px) {
+
+  .about-hero .hero-text h1 {
+    font-size: 26px;
+  }
+
+  .about-hero .tag {
+    font-size: 12px;
+  }
+
+  .about-hero .desc {
+    font-size: 13px;
+  }
+
+  .about-hero .circle {
+    width: 220px;
+    height: 220px;
+  }
+
+  .about-hero .icon {
+    padding: 6px;
+  }
+
+  /* icons inside safe zone */
+  .about-hero .icon1 {
+    top: 5%;
+    right: 0;
+  }
+
+  .about-hero .icon2 {
+    top: 0;
+    left: 40%;
+  }
+
+  .about-hero .icon3 {
+    bottom: 0;
+    right: 5%;
+  }
+}
