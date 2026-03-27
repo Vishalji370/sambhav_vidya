@@ -8,6 +8,19 @@
 .mv-heading h1 {
   font-size: 60px;
   font-weight: 500;
+  position: relative;
+  display: inline-block;
+}
+.mv-heading h1::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -10px;
+  width: 90px;
+  height: 4px;
+  background: orange;
+  border-radius: 2px;
 }
 
 .mv-lines span:first-child {

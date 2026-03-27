@@ -9,6 +9,10 @@ const faqs = [
   { q: "Do your programs provide certification?", a: "Yes, many programs provide recognized certifications upon successful completion of the course or training." },
   { q: "Who can join the drone training programs?", a: "Drone training programs are open to individuals who meet the eligibility criteria such as minimum education requirements and age guidelines specified for each course." },
   { q: "Can I get guidance to choose the right course or program?", a: "Yes, we offer guidance to help you choose the right course, university, or training program based on your interests and career goals." },
+  {
+  q: "Is there any support available after course completion?",
+  a: "Yes, we provide post-course support including career guidance, placement assistance, and access to learning resources to help you grow further."
+}
 ];
 
 const FAQSection = () => {

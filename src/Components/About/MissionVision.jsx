@@ -15,10 +15,7 @@ export default function MissionVision() {
     <div className="mv-heading">
       <h1>Our Mission <br /> & Vision</h1>
 
-      <div className="mv-lines">
-        <span></span>
-        <span></span>
-      </div>
+      
     </div>  
 
     {/* RIGHT MISSION */}

@@ -27,6 +27,20 @@
   font-size: 1.8rem;
   font-weight: 800;
   color: #111;
+  position: relative;
+  display: inline-block;
+}
+/* CENTER ORANGE UNDERLINE */
+.faq__card-heading::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -10px;
+  width: 90px;
+  height: 4px;
+  background: orange;
+  border-radius: 2px;
 }
 
 /* Body layout */

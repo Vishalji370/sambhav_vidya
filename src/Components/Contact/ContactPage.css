@@ -74,6 +74,20 @@
     text-align: center;
   width: 100%;
   margin-top: 0;
+   position: relative;
+  display: inline-block;
+}
+/* CENTER ORANGE UNDERLINE */
+.section-title::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -8px;
+  width: 80px;
+  height: 4px;
+  background: orange;
+  border-radius: 2px;
 }
 
 /* LEFT */
@@ -208,6 +222,20 @@
 
 .map-header h2 {
   font-size: 2.3rem;
+  position: relative;
+  display: inline-block;
+}
+/* UNDERLINE */
+.map-header h2::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -8px;
+  width: 90px;
+  height: 4px;
+  background: orange;
+  border-radius: 2px;
 }
 
 .map-frame {

@@ -10,6 +10,25 @@
   font-size: 2.3rem;
   font-weight: 800;
   color: #111;
+   position: relative;
+  display: inline-block;
+}
+.partners__heading {
+  position: relative;
+  display: inline-block;
+}
+
+/* SINGLE CENTER ORANGE LINE */
+.partners__heading::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -10px;
+  width: 90px;
+  height: 4px;
+  background: orange;
+  border-radius: 2px;
 }
 
 .partners__sub {
@@ -49,8 +68,8 @@
 
 /* image */
 .partners__logo img {
-  max-width: 90px;
-  max-height: 50px;
+  max-width: 110px;
+  max-height: 65px;
   object-fit: contain;
   transition: 0.3s;
 }

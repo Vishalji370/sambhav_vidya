@@ -1,8 +1,9 @@
 /* ── HERO SECTION ── */
 .hero {
   min-height: 70vh;
-  max-height: 60vh;
-  padding: 80px 122px 40px;
+  /* max-height: 60vh; */
+  max-height: unset;
+  padding: 40px 122px 40px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -331,7 +332,7 @@
     width: 100%;
     min-height: 420px;
     margin-top: 26px;
-    overflow: hidden;
+    overflow: visible;
     border-radius: 16px;
   }
 
@@ -340,12 +341,12 @@
     position: relative;
     right: auto;
     bottom: auto;
-    height: 100%;
+    height: auto;
     width: 100%;
     max-width: 100%;
     margin: 0 auto;
     display: block;
-    object-fit: cover;
+    object-fit: contain;
     object-position: top center;
   }
 

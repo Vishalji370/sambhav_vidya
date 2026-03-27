@@ -1,6 +1,6 @@
 /* ── LOOKING FOR SECTION ── */
 .lf {
-  padding: 60px 72px 90px;
+  padding: 20px 72px 90px;
   position: relative;
   overflow: hidden;
 }
@@ -20,6 +20,23 @@
   margin-bottom: 40px;
   position: relative;
   z-index: 1;
+}
+.lf__heading {
+  position: relative;
+  display: inline-block;
+}
+
+/* CENTER ORANGE LINE */
+.lf__heading::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -12px;
+  width: 80px;
+  height: 4px;
+  background: orange;
+  border-radius: 2px;
 }
 
 .lf__badge {
