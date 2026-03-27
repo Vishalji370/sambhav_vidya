@@ -1,9 +1,13 @@
 import React from 'react'
-
+import CHero from '../Components/Courses/CHero'
+import CoursesFilterSection from '../Components/Courses/CoursesFilterSection'
+import HomeCTA from '../Components/Home/HomeCTA'
 const Courses = () => {
   return (
     <div>
-      <h1>this is tehhe courses page </h1>
+   <CHero/>
+   <CoursesFilterSection/>
+   <HomeCTA/>
     </div>
   )
 }

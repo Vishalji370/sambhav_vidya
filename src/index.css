@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+body {
+  overflow-x: hidden;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Mobile tap/click highlight remove */
+@media (max-width: 1024px) {
+  *,
+  *::before,
+  *::after {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  a,
+  button,
+  input,
+  textarea,
+  select,
+  [role="button"] {
+    outline: none !important;
+    -webkit-appearance: none;
+    appearance: none;
+    transition: transform 120ms ease, filter 120ms ease, opacity 120ms ease;
+  }
+
+  a:focus,
+  a:focus-visible,
+  button:focus,
+  button:focus-visible,
+  input:focus,
+  input:focus-visible,
+  textarea:focus,
+  textarea:focus-visible,
+  select:focus,
+  select:focus-visible,
+  [role="button"]:focus,
+  [role="button"]:focus-visible {
+    outline: none !important;
+    box-shadow: none !important;
+  }
+
+  /* Tap feedback: halka press effect */
+  a:active,
+  button:active,
+  [role="button"]:active {
+    transform: scale(0.97);
+    filter: brightness(0.96);
+  }
+
+  input:active,
+  textarea:active,
+  select:active {
+    transform: scale(0.995);
+    filter: brightness(0.99);
+  }
+}

@@ -7,20 +7,30 @@ import "./Courses.css";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const filters = ["Design", "Technology"];
+const filters = ["IT", "Science", "Management", "Commerce", "Arts"];
 
 const coursesData = {
-  Technology: [
-    { name: "B.Tech", desc: "AI, ML", duration: "4 years" },
+  IT: [
     { name: "BCA", desc: "Web Dev", duration: "3 years" },
     { name: "MCA", desc: "Cloud", duration: "2 years" },
-    { name: "B.Sc IT", desc: "Software", duration: "3 years" },
-    { name: "Cyber Sec", desc: "Security", duration: "2 years" },
   ],
-  Design: [
-    { name: "B.Des", desc: "UI/UX", duration: "4 years" },
-    { name: "Fashion", desc: "Design", duration: "3 years" },
+  Science: [
+    { name: "B.Sc", desc: "Data Science", duration: "3 years" },
+    { name: "M.Sc", desc: "Mathematics", duration: "2 years" },
   ],
+Management: [
+    { name: "BBA", desc: "Management", duration: "3 years" },
+    { name: "MBA", desc: "Finance", duration: "2 years" },
+  ],
+  Commerce: [
+    { name: "B.Com", desc: "General", duration: "3 years" },
+    { name: "M.Com", desc: "General", duration: "2 years" },
+  ],
+  Arts: [
+    { name: "B.A.", desc: "Humanities", duration: "3 years" },
+    { name: "M.A", desc: "English", duration: "2 years" },
+  ],
+
 };
 
 const CoursesSection = () => {
@@ -30,6 +40,17 @@ const CoursesSection = () => {
   const courseRef = useRef();
   const cardsRef = useRef([]);
   const navigate = useNavigate();
+  const availableFilters = filters.filter(
+    (name) => Array.isArray(coursesData[name]) && coursesData[name].length > 0
+  );
+  const visibleCourses = coursesData[active] || [];
+
+  useEffect(() => {
+    if (!availableFilters.length) return;
+    if (!availableFilters.includes(active)) {
+      setActive(availableFilters[0]);
+    }
+  }, [active, availableFilters]);
 
   useEffect(() => {
     if (!sectionRef.current) return;
@@ -111,7 +132,7 @@ const CoursesSection = () => {
               <FaChevronLeft />
             </button>
             <div className="courses__filters" ref={filterRef}>
-              {filters.map((item, i) => (
+              {availableFilters.map((item, i) => (
                 <button
                   key={i}
                   className={`filter ${active === item ? "active" : ""}`}
@@ -128,11 +149,9 @@ const CoursesSection = () => {
 
           {/* CARDS */}
           <div className="course__container">
-            <button className="arrow left" onClick={() => scroll(courseRef, "left")}>
-              <FaChevronLeft />
-            </button>
+        
             <div className="courses__wrapper" ref={courseRef}>
-              {coursesData[active]?.map((course, i) => (
+              {visibleCourses.map((course, i) => (
                 <div
                   className="course__card"
                   key={i}
@@ -145,9 +164,7 @@ const CoursesSection = () => {
                 </div>
               ))}
             </div>
-            <button className="arrow right" onClick={() => scroll(courseRef, "right")}>
-              <FaChevronRight />
-            </button>
+      
           </div>
         </div>
 

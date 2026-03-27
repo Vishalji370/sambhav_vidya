@@ -6,6 +6,7 @@ import CollegeSection from '../Components/Home/CollegeSection'
 import Partners from '../Components/Home/Partners'
 import WhyChooseUs from '../Components/Home/WhyChooseUs'
 import FAQ from '../Components/Home/FAQ'
+import HomeCTA from '../Components/Home/HomeCTA'
 const Home = () => {
   return (
     <div>
@@ -16,6 +17,7 @@ const Home = () => {
       <Partners/>
       <WhyChooseUs/>
       <FAQ/>
+      <HomeCTA/>
     </div>
   )
 }

@@ -1,64 +1,19 @@
 import React, { useRef, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 import { gsap } from "gsap";
 import "./Partners.css";
 
 const partners = [
-  {
-    name: "Delhi University",
-    logo: "/Univpng/img1.png",
-    path: "/du",
-  },
-  {
-    name: "IIT Delhi",
-    logo: "/Univpng/img2.png",
-    path: "/iit-delhi",
-  },
-  {
-    name: "JNU",
-    logo: "/Univpng/img3.png",
-    path: "/jnu",
-  },
-  {
-    name: "Jamia Millia",
-    logo: "/Univpng/img4.png",
-    path: "/jamia",
-  },
-  {
-    name: "Amity University",
-    logo: "/Univpng/img5.jpg",
-    path: "/amity",
-  },
-    {
-    name: "Delhi University",
-    logo: "/Univpng/img6.png",
-    path: "/du",
-  },
-  {
-    name: "IIT Delhi",
-    logo: "/Univpng/img7.png",
-    path: "/iit-delhi",
-  },
-  {
-    name: "JNU",
-    logo: "/Univpng/img8.png",
-    path: "/jnu",
-  },
-  {
-    name: "Jamia Millia",
-    logo: "/Univpng/img9.png",
-    path: "/jamia",
-  },
-  {
-    name: "Amity University",
-    logo: "/Univpng/img10.png",
-    path: "/amity",
-  },
-    {
-    name: "manav",
-    logo: "/Univpng/img11.png",
-    path: "/manav",
-  },
+  { name: "Delhi University", logo: "/Univpng/img1.png" },
+  { name: "IIT Delhi", logo: "/Univpng/img2.png" },
+  { name: "JNU", logo: "/Univpng/img3.png" },
+  { name: "Jamia Millia", logo: "/Univpng/img4.png" },
+  { name: "Amity University", logo: "/Univpng/img5.jpg" },
+  { name: "Delhi University", logo: "/Univpng/img6.png" },
+  { name: "IIT Delhi", logo: "/Univpng/img7.png" },
+  { name: "JNU", logo: "/Univpng/img8.png" },
+  { name: "Jamia Millia", logo: "/Univpng/img9.png" },
+  { name: "Amity University", logo: "/Univpng/img10.png" },
+  { name: "manav", logo: "/Univpng/img11.png" },
 ];
 
 const PartnersSection = () => {
@@ -66,7 +21,6 @@ const PartnersSection = () => {
   const headingRef = useRef();
   const subRef = useRef();
   const trackRef = useRef();
-  const navigate = useNavigate();
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -117,11 +71,7 @@ const PartnersSection = () => {
         <div className="partners__track" ref={trackRef}>
           
           {[...partners, ...partners].map((item, i) => (
-            <div
-              key={i}
-              className="partners__logo"
-              onClick={() => navigate(item.path)}
-            >
+            <div key={i} className="partners__logo">
               <img src={item.logo} alt={item.name} />
             </div>
           ))}

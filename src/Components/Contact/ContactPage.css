@@ -1,7 +1,7 @@
 
 
 .unique-contact-page {
-  color: #333;
+  color: #545453;
 }
 
 /* HERO SECTION */
@@ -32,10 +32,12 @@
 
 .hero-content h1 {
   font-size: 3rem;
+  color: #FFCC09;
 }
 
 .hero-content p {
   font-size: 1.1rem;
+ line-height: 0px;
 }
 
 /* FLOATING CARD */
@@ -76,6 +78,7 @@
   margin-top: 0;
    position: relative;
   display: inline-block;
+  color: #545453;
 }
 /* CENTER ORANGE UNDERLINE */
 .section-title::after {
@@ -86,7 +89,7 @@
   bottom: -8px;
   width: 80px;
   height: 4px;
-  background: orange;
+  background: #FFCC09;
   border-radius: 2px;
 }
 
@@ -95,14 +98,18 @@
   flex: 1;
   min-width: 350px;
   padding: 50px;
-  background: #fff3e0;
-  
-  
+  background: linear-gradient(
+    165deg,
+    rgba(255, 204, 9, 0.18) 0%,
+    rgba(255, 204, 9, 0.1) 45%,
+    rgba(255, 250, 230, 0.95) 100%
+  );
 }
 
 .section-subtitle {
-  color: #555;
+  color: rgba(84, 84, 83, 0.92);
   margin-bottom: 30px;
+  line-height: 1.55;
 }
 
 .unique-contact-item {
@@ -115,11 +122,32 @@
 .unique-contact-item h4 {
   margin: 0;
   font-size: 16px;
+  color: #545453;
+  font-weight: 600;
 }
 
 .unique-contact-item span {
   font-size: 14px;
   line-height: 1.4;
+  color: rgba(84, 84, 83, 0.95);
+}
+
+.follow-section {
+  margin-top: 8px;
+}
+
+.follow-section h3 {
+  margin: 0 0 10px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #545453;
+}
+
+.follow-section p {
+  margin: 0 0 14px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: rgba(84, 84, 83, 0.92);
 }
 
 /* SOCIAL ICONS */
@@ -133,11 +161,12 @@
   font-size: 20px;
   cursor: pointer;
   transition: 0.3s;
+  color: #545453;
 }
 
 .unique-social-icons svg:hover {
   transform: translateY(-5px) scale(1.2);
-  color: #ff5722;
+  color: #c9a400;
 }
 
 /* RIGHT */
@@ -178,9 +207,9 @@
 .unique-contact-form input:focus,
 .unique-contact-form textarea:focus {
   outline: none;
-  border-color: #fb8c00;
+  border-color: #FFCC09;
   background: #fff;
-  box-shadow: 0 0 0 4px rgba(251, 140, 0, 0.1);
+  box-shadow: 0 0 0 4px rgba(255, 204, 9, 0.18);
 }
 
 .unique-contact-form textarea {
@@ -193,7 +222,7 @@
   padding: 16px;
   border-radius: 50px;
   border: none;
-  background: linear-gradient(90deg, #ff9800, #f44336);
+  background: #FFCC09;
   color: #fff;
   cursor: pointer;
   transition: 0.3s;
@@ -224,6 +253,7 @@
   font-size: 2.3rem;
   position: relative;
   display: inline-block;
+  color: #545453;
 }
 /* UNDERLINE */
 .map-header h2::after {
@@ -234,7 +264,7 @@
   bottom: -8px;
   width: 90px;
   height: 4px;
-  background: orange;
+  background: #FFCC09;
   border-radius: 2px;
 }
 
@@ -248,7 +278,7 @@
 
 .map-frame:hover {
   transform: scale(1.02);
-  box-shadow: 0 25px 60px rgba(255, 87, 34, 0.3);
+  box-shadow: 0 25px 60px rgba(255, 204, 9, 0.3);
 }
 
 .map-frame iframe {

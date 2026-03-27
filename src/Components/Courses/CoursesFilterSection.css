@@ -1,0 +1,339 @@
+#courses-filter-section {
+  display: flex;
+  padding: 30px;
+  gap: 40px;
+  align-items: flex-start; /* ✅ important */
+}
+/* SIDEBAR */
+.filter-sidebar {
+  width: 360px;
+  padding: 0px;
+  border-radius: 12px;
+
+  position: sticky;   /* ✅ MAIN FIX */
+  top: 60px;          /* ✅ distance from top */
+  height: fit-content; /* ✅ content ke according height */
+  color: gray;
+}
+
+/* DROPDOWN */
+.dropdown {
+  margin-bottom: 20px;
+  position: relative;
+  color: gray;
+}
+
+.dropdown-btn {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: left;
+  font-weight: 600;
+  background: #f3f3f3;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  color: gray;
+}
+
+.dropdown-btn__label {
+  flex: 1;
+  min-width: 0;
+}
+
+.dropdown-btn__icon {
+  flex-shrink: 0;
+  font-size: 14px;
+  transition: transform 0.25s ease;
+}
+
+.dropdown--open .dropdown-btn__icon {
+  transform: rotate(180deg);
+}
+
+.dropdown-btn:hover {
+  background: #FFCC09;
+  color: white;
+}
+.arrow-icon {
+  font-size: 14px;
+  color: #FFCC09; /* same as your theme */
+  transition: transform 0.3s ease;
+}
+
+/* rotate when open */
+.arrow-icon.open {
+  transform: rotate(180deg);
+}
+/* MENU */
+/* ITEMS */
+.dropdown-menu p {
+  width: 90%;
+  text-align: center;
+  padding: 10px;
+  margin: 0;
+  border-radius: 0;
+  cursor: pointer;
+  transition: 0.25s ease;
+
+  border-bottom: 1px solid #eee; /* ✅ LINE */
+}
+
+/* LAST ITEM ME LINE NA HO */
+.dropdown-menu p:last-child {
+  border-bottom: none;
+}
+
+/* HOVER */
+.dropdown-menu p:hover {
+  background: linear-gradient(135deg, #FFCC09, #FFCC09);
+  color: white;
+}
+/* CLEAR */
+.clear-btn {
+  width: 100%;
+  padding: 10px;
+  background: #FFCC09;
+  color: white;
+  border: none;
+  border-radius: 8px;
+}
+
+/* CONTENT */
+.courses-content {
+  flex: 1;
+  color: gray;
+}
+
+/* GRID FIX */
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  align-items: stretch; /* ✅ SAME HEIGHT */
+}
+
+/* CARD FIX */
+.course-card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  max-height: 320px; /* ✅ CONTROL HEIGHT */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+.course-card:hover {
+  transform: translateY(-5px);
+}
+
+/* IMAGE FIX */
+.course-card img {
+  width: 100%;
+  height: 140px; /* ✅ REDUCED */
+  object-fit: cover;
+}
+
+/* CONTENT FIX */
+.card-content {
+  padding: 12px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
+/* TAG */
+.tag {
+  font-size: 11px;
+  background: #FFCC09;
+  padding: 4px 8px;
+  border-radius: 20px;
+  color: white;
+  display: inline-block;
+  align-self: center;
+}
+
+/* TEXT SIZE FIX */
+.card-content h3 {
+  font-size: 16px;
+  margin: 5px 0;
+  color: gray;
+}
+
+.card-content p {
+  font-size: 13px;
+  margin: 0;
+  color: green;
+}
+
+.duration {
+  color: gray;
+}
+
+/* BUTTON FIX */
+.apply-btn {
+  margin-top: auto;
+  padding: 8px;
+  width: 100%;
+  font-size: 13px;
+  border: none;
+  background: #FFCC09;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.apply-btn:hover {
+  background: rgb(255, 238, 0);
+}
+
+/* 🔥 RESPONSIVE SUPER FIX */
+
+
+
+/* ================== LARGE TABLET ================== */
+@media (max-width: 1200px) {
+  #courses-filter-section {
+    padding: 40px;
+    gap: 30px;
+  }
+
+  .filter-sidebar {
+    width: 280px; /* thoda compact */
+  }
+
+  .courses-grid {
+    grid-template-columns: repeat(2, 1fr); /* 3 → 2 */
+  }
+}
+
+
+/* ================== TABLET ================== */
+@media (max-width: 992px) {
+  #courses-filter-section {
+    flex-direction: column;
+  }
+
+  .filter-sidebar {
+    width: 100%;
+    position: relative; /* ❌ sticky remove */
+    top: 0;
+  }
+
+  .courses-content {
+    width: 100%;
+  }
+
+  .courses-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+/* ================== SMALL TABLET ================== */
+@media (max-width: 768px) {
+  #courses-filter-section {
+    padding: 30px 20px;
+  }
+
+  .dropdown-btn {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .dropdown-menu p {
+    font-size: 13px;
+    padding: 8px;
+  }
+
+  .courses-grid {
+    grid-template-columns: 1fr; /* 2 → 1 */
+    gap: 15px;
+  }
+
+  .course-card {
+    max-height: none; /* flexible height */
+  }
+
+  .course-card img {
+    height: 160px;
+  }
+}
+
+
+/* ================== MOBILE ================== */
+@media (max-width: 480px) {
+  #courses-filter-section {
+    padding: 20px 15px;
+  }
+
+  .filter-sidebar {
+    padding: 10px;
+  }
+
+  .dropdown-btn {
+    font-size: 13px;
+    padding: 8px;
+  }
+
+  .clear-btn {
+    padding: 8px;
+    font-size: 13px;
+  }
+
+  .card-content h3 {
+    font-size: 14px;
+  }
+
+  .card-content p {
+    font-size: 12px;
+  }
+
+  .apply-btn {
+    font-size: 12px;
+    padding: 7px;
+  }
+
+  .course-card img {
+    height: 140px;
+  }
+}
+/* TABLET */
+@media (max-width: 992px) {
+  .courses-grid {
+    grid-template-columns: repeat(2, 1fr); /* ✅ 2 cards */
+  }
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .courses-grid {
+    grid-template-columns: repeat(2, 1fr); /* ✅ still 2 cards */
+    gap: 12px;
+  }
+
+  .course-card img {
+    height: 120px; /* thoda compact */
+  }
+
+  .card-content h3 {
+    font-size: 14px;
+  }
+
+  .card-content p {
+    font-size: 12px;
+  }
+
+  .apply-btn {
+    font-size: 12px;
+    padding: 6px;
+  }
+}

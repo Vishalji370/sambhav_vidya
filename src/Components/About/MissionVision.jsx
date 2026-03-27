@@ -13,7 +13,7 @@ export default function MissionVision() {
 
     {/* LEFT HEADING */}
     <div className="mv-heading">
-      <h1>Our Mission <br /> & Vision</h1>
+      <h1>Our Purpose <br /> & Belief</h1>
 
       
     </div>  
@@ -21,9 +21,11 @@ export default function MissionVision() {
     {/* RIGHT MISSION */}
     <div className="mv-card">
       <div className="mv-text">
-        <h3>Mission</h3>
+        <h3>Our Purpose</h3>
         <p>
-          Empowering students with the right guidance to choose the best courses.
+         Guided by experts from IITs, NITs, and premier institutes, Sambhav Vidya empowers learners to unlock their potential through education.
+
+A growth ecosystem that supports individuals from clarity to achievement, bridging learning to earning.
         </p>
       </div>
 
@@ -42,9 +44,9 @@ export default function MissionVision() {
 </div>
 
       <div className="mv-text">
-        <h3>Vision</h3>
+        <h3>Our Belief</h3>
         <p>
-          To become India's most trusted education platform.
+         We believe education should go beyond preparing you for a job and instead equip you for life, enabling you to make informed decisions and build meaningful work. It should help you grow with confidence and live with dignity, creating a foundation for long-term personal and professional fulfillment.
         </p>
       </div>
     </div>

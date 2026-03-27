@@ -9,7 +9,7 @@
 .partners__heading {
   font-size: 2.3rem;
   font-weight: 800;
-  color: #111;
+  color: #545453;
    position: relative;
   display: inline-block;
 }
@@ -27,7 +27,7 @@
   bottom: -10px;
   width: 90px;
   height: 4px;
-  background: orange;
+  background: #FFCC09;
   border-radius: 2px;
 }
 
@@ -61,7 +61,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
+  cursor: default;
   transition: 0.3s;
   border: 1px solid #eee;
 }
@@ -77,8 +77,8 @@
 /* hover */
 .partners__logo:hover {
   transform: translateY(-8px) scale(1.1);
-  box-shadow: 0 15px 40px rgba(255, 140, 0, 0.3);
-  border-color: orange;
+  box-shadow: 0 15px 40px rgba(255, 204, 9, 0.3);
+  border-color: #FFCC09;
 }
 
 .partners__logo:hover img {

@@ -10,7 +10,7 @@
 .college__heading {
   font-size: 2.5rem;
   font-weight: 800;
-  color: #111;
+  color: #545453;
    position: relative;
   display: inline-block;
 }
@@ -23,7 +23,7 @@
   bottom: -12px;
   width: 100px;
   height: 4px;
-  background: orange;
+  background: #FFCC09;
   border-radius: 2px;
 }
 .college__sub {
@@ -121,11 +121,12 @@
   margin: 0;
   min-height: 2em; /* compact title block */
   line-height: 1.25;
+  color: #545453;
 }
 
 .location {
   font-size: 0.85rem;
-  color: #888;
+  color: rgba(84, 84, 83, 0.88);
   margin: 4px 0;
   min-height: 3em; /* keep alignment but reduce gap */
   line-height: 1.4;
@@ -133,7 +134,7 @@
 
 .college__duration {
   margin: 4px 0 0;
-  color: #ff6b00;
+  color: #FFCC09;
   font-weight: 700;
   font-size: 0.9rem;
 }
@@ -158,7 +159,7 @@
 .college__arrow.right { right: 10px; }
 
 .college__arrow:hover {
-  background: orange;
+  background: #FFCC09;
   color: #fff;
 }
 

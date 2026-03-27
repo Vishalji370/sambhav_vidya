@@ -1,0 +1,106 @@
+#home-cta {
+  position: relative;
+  padding: 100px 20px;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* CONTENT */
+.cta-content h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #545453;
+}
+
+.cta-content span {
+  color: #FFCC09;
+}
+
+.cta-content p {
+  margin: 20px auto;
+  max-width: 600px;
+  color: #666;
+}
+
+/* BUTTONS */
+.cta-buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.btn-primary {
+  background: #FFCC09;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.btn-secondary {
+  background: green;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* FLOATING ICONS */
+.cta-icon {
+  position: absolute;
+  font-size: 28px;
+  animation: float 6s infinite ease-in-out;
+  opacity: 0.8;
+  color: green;
+}
+
+/* ICON POSITIONS */
+.icon1 { top: 10%; left: 10%; }
+.icon2 { top: 20%; right: 15%; }
+.icon3 { bottom: 20%; left: 15%; }
+.icon4 { bottom: 10%; right: 10%; }
+.icon5 { top: 50%; left: 5%; }
+.icon6 { top: 60%; right: 5%; }
+
+/* FLOAT ANIMATION */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* Tablet */
+@media (max-width: 900px) {
+  .cta-content h1 {
+    font-size: 2.3rem;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  #home-cta {
+    padding: 70px 15px;
+  }
+
+  .cta-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .cta-content p {
+    font-size: 14px;
+  }
+
+  .cta-icon {
+    font-size: 22px;
+  }
+}

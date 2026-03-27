@@ -1,6 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { openLookingForPopup } from "../LookingForPopup";
 import "./CollegeSection.css";
 
 const data = [
@@ -121,6 +122,15 @@ const CollegeSection = () => {
             className="college__card"
             key={i}
             ref={(el) => (cardsRef.current[i] = el)}
+            role="button"
+            tabIndex={0}
+            onClick={() => openLookingForPopup()}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                openLookingForPopup();
+              }
+            }}
           >
             {/* IMAGE */}
             <div className="college__img">

@@ -6,7 +6,7 @@ import "./Header.css";
 const navLinks = [
   { label: "Home",     path: "/" },
   { label: "Courses",  path: "/courses" },
-  { label: "Partners", path: "/partners" },
+  //{ label: "Partners", path: "/partners" },
   //{ label: "Blog",     path: "/blog" },
   { label: "About",    path: "/about" },
   { label: "Contact",  path: "/contact" },

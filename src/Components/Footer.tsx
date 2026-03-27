@@ -20,10 +20,10 @@ const Footer = () => {
 
       {/* 🔥 LEFT SIDE */}
       <div className="footer__left">
-        <h2 className="logo">My<span>College</span></h2>
+        <h2 className="logo">Sambhav Vidya</h2>
 
         <p className="tagline">
-          Get the right <span>guidance</span> with us
+          plot no 1 sector 27 <span>Golf course road Gurgaon</span>
         </p>
 
         <div className="footer__contact">
@@ -36,10 +36,10 @@ const Footer = () => {
       <div className="footer__col">
         <h3>Courses</h3>
         <ul>
-          <li>B.Tech</li>
+          <li>MCA</li>
           <li>BCA</li>
           <li>MBA</li>
-          <li>Design</li>
+          <li>BBA</li>
         </ul>
         <span onClick={() => navigate("/courses")}>View All +</span>
       </div>
@@ -48,12 +48,12 @@ const Footer = () => {
       <div className="footer__col">
         <h3>Universities</h3>
         <ul>
-          <li>Delhi University</li>
-          <li>IIT Delhi</li>
-          <li>JNU</li>
-          <li>Amity</li>
+          <li>LPU Online</li>
+          <li>Sharda Unversity</li>
+          <li>Amity Unversity</li>
+          <li>Manipal Unversity</li>
         </ul>
-        <span onClick={() => navigate("/universities")}>View All +</span>
+        <span onClick={() => navigate("/courses")}>View All +</span>
       </div>
 
       {/* 🔥 QUICK LINKS */}

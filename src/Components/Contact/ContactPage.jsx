@@ -53,7 +53,7 @@ export default function ContactPage() {
         <div className="hero-content">
           <h1>Connect With Sambhav Vidya</h1>
           <p>
-            Get guidance on courses and universities, or explore partnership opportunities with our education platform.
+              Get course guidance or explore partnership opportunities with our platform.
           </p>
         </div>
       </section>

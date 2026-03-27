@@ -9,11 +9,15 @@ import Partners from "./Pages/Partners";
 import Blog from "./Pages/Blog";
 import About from "./Pages/About";
 import Contact from "./Pages/Contact";
+import WhatsApp from "./Components/WhatsApp";
+import ScrollTopButton from "./Components/ScrollTopButton";
+import LookingForPopup from "./Components/LookingForPopup";
 
 const App = () => {
   return (
     <Router>
       <ScrollToTop />
+      <LookingForPopup />
       <Header />
 
       <main className="main-with-fixed-nav">
@@ -28,6 +32,8 @@ const App = () => {
       </main>
 
       <Footer />
+      <WhatsApp />
+      <ScrollTopButton />
     </Router>
   );
 };

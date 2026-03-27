@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import "./AboutHero.css";
 import gsap from "gsap";
-import heroImg from "../../assets/images/hero.png";
+import heroImg from "../../assets/images/hero.jpeg";
 
 
 export default function AboutHero() {
@@ -65,8 +65,8 @@ export default function AboutHero() {
 
         <div className="hero-text">
          <h1>
-  Empowering Students <br />
-  to Find the <span>Right Education</span> 
+  Empowering Students 
+  to <br />Find the <span>Right Education</span> 
 </h1>
 
           <p className="desc">

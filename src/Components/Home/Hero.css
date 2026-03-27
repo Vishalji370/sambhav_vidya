@@ -53,8 +53,8 @@
   align-items: center;
   gap: 7px;
  
-  border: 1px solid rgba(255, 107, 0, 0.2);
-  color: orange;
+  border: 1px solid rgba(255, 204, 9, 0.35);
+  color: #FFCC09;
   font-size: 0.78rem;
   font-weight: 600;
   padding: 5px 14px;
@@ -67,7 +67,7 @@
 .hero__badge-dot {
   width: 7px;
   height: 7px;
-  background: #ff6b00;
+  background: #FFCC09;
   border-radius: 50%;
   animation: pulse-dot 1.6s ease-in-out infinite;
 }
@@ -82,13 +82,13 @@
   font-size: clamp(2.4rem, 4.5vw, 3.4rem);
   font-weight: 800;
   line-height: 1.15;
-  color: #1a1000;
+  color: #545453;
   margin-bottom: 18px;
   letter-spacing: -0.02em;
 }
 
 .hero__heading--accent {
-  color: orange;
+  color: #FFCC09;
   display: block;
   overflow: hidden;
 }
@@ -129,14 +129,14 @@
 
 .hero__btn--primary {
   padding: 13px 26px;
-  background: linear-gradient(135deg, #ffaa00, #ff6b00);
+  background: #FFCC09;
   color: #fff;
-  box-shadow: 0 6px 20px rgba(255, 107, 0, 0.35);
+  box-shadow: 0 6px 20px rgba(255, 204, 9, 0.35);
 }
 
 .hero__btn--primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 28px rgba(255, 107, 0, 0.45);
+  box-shadow: 0 10px 28px rgba(255, 204, 9, 0.45);
 }
 
 .hero__btn--ghost {
@@ -144,7 +144,7 @@
   padding: 12px 0;
 }
 
-.hero__btn--ghost:hover { color: #ff6b00; }
+.hero__btn--ghost:hover { color: #FFCC09; }
 
 .hero__play {
   width: 36px;
@@ -155,7 +155,7 @@
   align-items: center;
   justify-content: center;
   font-size: 0.7rem;
-  color: #ff6b00;
+  color: #FFCC09;
   box-shadow: 0 3px 12px rgba(0,0,0,0.12);
 }
 
@@ -176,7 +176,7 @@
 .hero__stat-num {
   font-size: 1.9rem;
   font-weight: 800;
-  color: #1a1000;
+  color: #545453;
   line-height: 1;
 }
 
@@ -214,7 +214,7 @@
 .hero__shape--teal {
   width: 200px;
   height: 200px;
-  background-color: orange;
+  background-color: #FFCC09;
   top: 0;
   right: 20px;
   transform: rotate(25deg);
@@ -225,7 +225,7 @@
 .hero__shape--orange {
   width: 130px;
   height: 130px;
-  background: linear-gradient(135deg, #ff8c42, #ff5500);
+  background: #FFCC09;
   bottom: 60px;
   right: 10px;
   transform: rotate(15deg);
@@ -243,7 +243,7 @@
   object-fit: cover;
   object-position: top center;
   z-index: 2;
-  filter: drop-shadow(-20px 0px 40px rgba(255, 107, 0, 0.15));
+  filter: drop-shadow(-20px 0px 40px rgba(255, 204, 9, 0.2));
 }
 
 /* Floating badge */
@@ -264,7 +264,7 @@
 .hero__float-icon {
   width: 32px;
   height: 32px;
-  background: linear-gradient(135deg, #ffaa00, #ff6b00);
+  background: #FFCC09;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -278,7 +278,7 @@
 .hero__float-title {
   font-size: 0.82rem;
   font-weight: 700;
-  color: #1a1000;
+  color: #545453;
 }
 
 .hero__float-sub {
