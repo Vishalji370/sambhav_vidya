@@ -37,7 +37,9 @@
 
 .hero-content p {
   font-size: 1.1rem;
- line-height: 0px;
+  line-height: 1.6;
+  max-width: 680px;
+  margin: 12px auto 0;
 }
 
 /* FLOATING CARD */
@@ -367,6 +369,22 @@
     line-height: 1.5;
   }
 
+  .hero-content {
+    max-width: 92%;
+    padding: 0 14px;
+  }
+
+  .hero-content h1 {
+    font-size: 2.05rem;
+    line-height: 1.2;
+  }
+
+  .hero-content p {
+    font-size: 0.95rem;
+    line-height: 1.55;
+    margin-top: 10px;
+  }
+
   .unique-contact-item {
     gap: 10px;
   }
@@ -424,7 +442,8 @@
   }
 
   .hero-content {
-    padding: 0 10px;
+    max-width: 100%;
+    padding: 0 12px;
   }
 
   .hero-content h1 {
@@ -433,6 +452,8 @@
 
   .hero-content p {
     font-size: 0.8rem;
+    line-height: 1.45;
+    margin-top: 8px;
   }
 
   .map-frame {

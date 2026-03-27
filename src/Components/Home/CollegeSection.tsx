@@ -51,9 +51,9 @@ const data = [
 
 const CollegeSection = () => {
   gsap.registerPlugin(ScrollTrigger);
-  const sectionRef = useRef();
-  const scrollRef = useRef();
-  const cardsRef = useRef([]);
+  const sectionRef = useRef<HTMLElement>(null);
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const cardsRef = useRef<HTMLDivElement[]>([]);
 
   /* 🔥 GSAP Animation */
   useEffect(() => {
