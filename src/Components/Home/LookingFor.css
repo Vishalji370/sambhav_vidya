@@ -581,43 +581,118 @@
 }
 
 
+
+/* ─────────────────────────────
+   TABLET (≤ 992px)
+───────────────────────────── */
+@media (max-width: 992px) {
+  .lf {
+    padding: 50px 30px 70px;
+  }
+
+  .lf__heading {
+    font-size: 2rem;
+  }
+
+  .lf__sub {
+    font-size: 0.9rem;
+  }
+
+  .lf__cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+    max-width: 600px;
+  }
+
+  .lf__card {
+    padding: 18px 14px;
+    min-height: 160px;
+  }
+
+  .lf__card-title {
+    font-size: 0.95rem;
+  }
+
+  .lf__card-desc {
+    font-size: 0.82rem;
+  }
+
+  .lf__popup {
+    max-width: 90vw;
+  }
+}
+
+
 /* ─────────────────────────────
    MOBILE (≤ 768px)
 ───────────────────────────── */
 @media (max-width: 768px) {
-  .lf { padding: 40px 20px 60px; }
-  .lf__heading { font-size: 1.7rem; }
-  .lf__sub { font-size: 0.85rem; }
-
-  .lf__cards {
-    display: grid !important;
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 16px;
+  .lf {
+    padding: 40px 16px 60px;
   }
-  .lf__card { padding: 16px; min-height: 160px; }
-  .lf__card:last-child {
-    grid-column: 1 / -1;
-    max-width: 260px;
-    margin: 0 auto;
+
+  .lf__heading {
+    font-size: 1.7rem;
   }
-  .lf__card-title { font-size: 0.9rem; }
-  .lf__card-desc { font-size: 0.8rem; }
 
-  .lf__search { flex-direction: row; gap: 8px; padding: 6px 10px; }
-  .lf__search-input { font-size: 0.85rem; }
-  .lf__search-btn { padding: 9px 14px; font-size: 0.78rem; white-space: nowrap; }
-
-  /* Popup mobile: bottom sheet */
-  .lf__overlay { padding: 0; align-items: flex-end; }
-  .lf__popup {
-    width: 100%;
+  .lf__sub {
+    font-size: 0.85rem;
     max-width: 100%;
-    border-radius: 20px 20px 0 0;
-    max-height: 94vh;
   }
-  .lf__popup-header h3 { font-size: 1.3rem; }
-  .lf__form-row { grid-template-columns: 1fr; gap: 10px; }
-  .lf__chip { padding: 6px 12px; font-size: 0.76rem; }
+
+  /* ✅ 2 cards same row */
+  .lf__cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .lf__card {
+    padding: 16px 12px;
+    min-height: 150px;
+    border-radius: 18px;
+  }
+
+  .lf__card-icon {
+    font-size: 1.6rem;
+  }
+
+  .lf__card-title {
+    font-size: 0.85rem;
+  }
+
+  .lf__card-desc {
+    font-size: 0.75rem;
+  }
+
+  /* popup */
+  .lf__popup {
+    max-width: 95vw;
+    border-radius: 16px;
+  }
+
+  .lf__popup-header h3 {
+    font-size: 1.3rem;
+  }
+
+  .lf__popup-header p {
+    font-size: 0.75rem;
+  }
+
+  /* form */
+  .lf__form-row {
+    grid-template-columns: 1fr; /* ✅ stack form fields */
+  }
+
+  .lf__form-group input,
+  .lf__form-group select {
+    font-size: 0.8rem;
+    padding: 9px 10px 9px 30px;
+  }
+
+  .lf__form-submit {
+    font-size: 0.85rem;
+    padding: 12px;
+  }
 }
 
 
@@ -625,22 +700,63 @@
    SMALL MOBILE (≤ 480px)
 ───────────────────────────── */
 @media (max-width: 480px) {
-  .lf__cards {
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-    gap: 12px;
+  .lf {
+    padding: 30px 12px 50px;
   }
-  .lf__card:last-child { grid-column: 1 / -1; max-width: 220px; margin: 0 auto; }
 
-  .lf__search { flex-direction: row; align-items: center; border-radius: 50px; padding: 6px 8px 6px 10px; gap: 8px; }
-  .lf__search-input { min-width: 0; font-size: 0.82rem; }
-  .lf__search-btn { width: auto; padding: 8px 12px; font-size: 0.76rem; }
+  .lf__heading {
+    font-size: 1.5rem;
+  }
 
-  .lf__popup-header h3 { font-size: 1.1rem; }
-  .lf__popup-header p { font-size: 0.76rem; }
-  .lf__form-group label { font-size: 0.66rem; }
-  .lf__form-group input, .lf__form-group select { padding: 9px 10px 9px 30px; font-size: 0.82rem; }
-  .lf__chip { width: 100%; text-align: center; }
-  .lf__success { padding: 24px 8px; }
-  .lf__success h3 { font-size: 1.2rem; }
-  .lf__success p { font-size: 0.82rem; }
+  .lf__badge {
+    font-size: 0.7rem;
+    padding: 4px 10px;
+  }
+
+  .lf__cards {
+    gap: 10px;
+  }
+
+  .lf__card {
+    min-height: 135px;
+    padding: 12px 10px;
+  }
+
+  .lf__card-icon {
+    font-size: 1.4rem;
+  }
+
+  .lf__card-title {
+    font-size: 0.8rem;
+  }
+
+  .lf__card-desc {
+    font-size: 0.72rem;
+    line-height: 1.4;
+  }
+
+  /* popup tighter */
+  .lf__popup-header {
+    padding: 16px;
+  }
+
+  .lf__popup-body {
+    padding: 10px 14px;
+  }
+
+  .lf__popup-footer {
+    padding: 10px 14px;
+  }
+
+  .lf__form-submit {
+    font-size: 0.8rem;
+  }
+
+  .lf__footer-note {
+    font-size: 0.65rem;
+  }
+
+  .lf__footer-legal {
+    font-size: 0.6rem;
+  }
 }
