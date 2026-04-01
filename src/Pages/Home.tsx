@@ -6,18 +6,21 @@ import CollegeSection from '../Components/Home/CollegeSection'
 import Partners from '../Components/Home/Partners'
 import WhyChooseUs from '../Components/Home/WhyChooseUs'
 import FAQ from '../Components/Home/FAQ'
+import Reviews from '../Components/Home/Reviews'
 import HomeCTA from '../Components/Home/HomeCTA'
 const Home = () => {
   return (
     <div>
       <Hero/>
       <LookingFor/>
-      <Courses/>
-      <CollegeSection/>
       <Partners/>
+     
+      <CollegeSection/>
       <WhyChooseUs/>
-      <FAQ/>
+      <Reviews/>
       <HomeCTA/>
+      <FAQ/>
+      
     </div>
   )
 }

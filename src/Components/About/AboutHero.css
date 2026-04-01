@@ -10,7 +10,8 @@
 
 /* LEFT */
 .about-hero .hero-left {
-  width: 50%;
+  flex: 1 1 520px;
+  min-width: 320px;
 }
 
 .about-hero .tag {
@@ -70,14 +71,15 @@
 /* RIGHT */
 .about-hero .hero-right {
   position: relative;
+  flex: 0 1 auto;
 
 }
 
 /* MAIN CIRCLE */
 .about-hero .circle {
-  width: 520px;
-  height: 520px;
-
+  width: clamp(280px, 38vw, 520px);
+  height: clamp(280px, 38vw, 520px);
+  margin-left: auto;
   border-radius: 0;
   display: flex;
   align-items: center;
@@ -86,7 +88,9 @@
 }
 
 .about-hero .circle img {
-  width: 110%;
+  width: 112%;
+  height: 112%;
+  object-fit: cover;
 }
 
 /* FLOAT ICONS */
@@ -130,15 +134,10 @@
   left: -60px;
 }
 
-/* ========================= */
-/* GLOBAL FIX */
-/* ========================= */
-* {
-  box-sizing: border-box;
-}
-
+/* Desktop: don't wrap (prevents image dropping down) */
 .about-hero {
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  gap: 28px;
 }
 
 /* ========================= */

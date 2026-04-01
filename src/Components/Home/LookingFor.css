@@ -82,78 +82,17 @@
   margin: 0 auto;
   line-height: 1.6;
 }
-
-/* ── SEARCH BAR ── */
-.lf__search-wrap {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 52px;
-  position: relative;
-  z-index: 1;
-}
-
-.lf__search {
-  display: flex;
-  align-items: center;
-  background: #fff;
-  border: 2px solid rgba(255, 204, 9, 0.35);
-  border-radius: 50px;
-  padding: 6px 6px 6px 20px;
-  width: 100%;
-  max-width: 580px;
-  box-shadow: 0 8px 32px rgba(255, 204, 9, 0.2);
-  transition: border-color 0.25s, box-shadow 0.25s;
-  gap: 10px;
-}
-
-.lf__search:focus-within {
-  border-color: #FFCC09;
-  box-shadow: 0 8px 36px rgba(255, 204, 9, 0.24);
-}
-
-.lf__search-icon { flex-shrink: 0; }
-
-.lf__search-input {
-  flex: 1;
-  border: none;
-  outline: none;
-  font-size: 0.95rem;
-  color: #545453;
-  background: transparent;
-  font-family: inherit;
-}
-
-.lf__search-input::placeholder { color: #b0a090; }
-
-.lf__search-btn {
-  background: #FFCC09;
-  color: #fff;
-  border: none;
-  border-radius: 40px;
-  padding: 11px 28px;
-  font-weight: 700;
-  font-size: 0.88rem;
-  cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.2s;
-  font-family: inherit;
-  letter-spacing: 0.02em;
-  white-space: nowrap;
-}
-
-.lf__search-btn:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 6px 18px rgba(255, 204, 9, 0.35);
-}
-
 /* ── CARDS ── */
 .lf__cards {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);  /* already 2 hai */
   gap: 24px;
   position: relative;
   z-index: 1;
-  max-width: 1000px;
-  margin: 0 auto;
+  max-width: 700px;   /* 1000px tha — 2 cards ke liye chota karo */
+  margin: 0 auto;     /* center already hai */
+  align-items: center;
+  text-align: center;
 }
 
 .lf__card {
@@ -164,21 +103,12 @@
   text-align: center;
 }
 
-.lf__card-glow {
-  position: absolute;
-  width: 160px;
-  height: 160px;
-  background: radial-gradient(circle, var(--card-color, #FFCC09), transparent 70%);
-  opacity: 0.08;
-  top: -40px;
-  right: -40px;
-  border-radius: 50%;
-  transition: opacity 0.3s, transform 0.3s;
-  pointer-events: none;
-}
+
 
 .lf__card:hover {
   transform: translateY(-8px) scale(1.02);
+  border: 1px solid #FFCC09;
+  border-radius: 45px;
 }
 
 .lf__card:hover .lf__card-glow {

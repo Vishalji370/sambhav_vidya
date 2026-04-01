@@ -12,26 +12,20 @@ const cards = [
   {
     id: "courses",
     icon: <FaBook />,
-    title: "Courses",
-    desc: "Learn from top online courses across diverse subjects and build skills for your career.",
-    path: "/courses",
+    title: "Not Sure What to Study?",
+    desc: "Get AI-powered suggestions tailored to your goals and interests.",
+    path: "/ai-suggest",
     type: "link",
+    btnText: "Get Recommendations →",
   },
   {
     id: "colleges",
     icon: <FaUniversity />,
-    title: "Universities",
-    desc: "Explore top universities and discover programs that support your academic journey.",
-    path: "/courses",
+    title: "Compare Colleges Side by Side",
+    desc: "See key differences in universities and choose the one that fits you best.",
+    path: "/compare",
     type: "link",
-  },
-  {
-    id: "career",
-    icon: <FaRocket />,
-    title: "Career Guidance",
-    desc: "Get personalized career suggestions based on your interests and future goals.",
-    path: null,
-    type: "popup",
+    btnText: "Compare Now →",
   },
 ];
 
@@ -83,21 +77,8 @@ const LookingFor = () => {
 
       <div className="lf__heading-wrap" ref={headingRef}>
         <h2 className="lf__heading">
-          Find Your Perfect <span>Path</span>
+          <span>AI-Powered Tools</span> to Guide Your <br />Perfect Choice
         </h2>
-      </div>
-
-      <div className="lf__search-wrap" ref={searchRef}>
-        <div className="lf__search">
-          <input
-            type="text"
-            placeholder="Search courses, colleges, careers paths..."
-            className="lf__search-input"
-          />
-          <button type="button" className="lf__search-btn">
-            Search
-          </button>
-        </div>
       </div>
 
       <div className="lf__cards">
@@ -126,7 +107,7 @@ const LookingFor = () => {
             <div className="lf__card-glow" />
             <h3 className="lf__card-title">{card.title}</h3>
             <p className="lf__card-desc">{card.desc}</p>
-            <span className="lf__card-arrow">{card.type === "popup" ? "Fill Form →" : "Explore →"}</span>
+            <span className="lf__card-arrow">{card.btnText}</span>
           </div>
         ))}
       </div>

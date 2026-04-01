@@ -95,12 +95,45 @@
 /* hover content */
 .college__hover-content {
   position: absolute;
-  bottom: 10px;
-  left: 15px;
+  inset: 0;
   color: #fff;
-  transform: translateY(20px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 6px;
+  padding: 14px;
+  transform: translateY(12px);
   opacity: 0;
   transition: 0.4s;
+}
+
+.college__hover-content h4 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.25;
+  max-width: 90%;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.college__hover-content span {
+  margin: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  padding: 6px 12px;
+  border-radius: 999px;
+
+ 
 }
 
 .college__card:hover .college__hover-content {
@@ -110,11 +143,11 @@
 
 /* content */
 .college__content {
-
+  flex: 1;
   text-align: center;
   display: flex;
   flex-direction: column;
-  height: 100%;
+  padding: 10px 12px 12px;
 }
 
 .college__content h3 {
@@ -130,10 +163,11 @@
   margin: 4px 0;
   min-height: 3em; /* keep alignment but reduce gap */
   line-height: 1.4;
+  flex: 1;
 }
 
 .college__duration {
-  margin: 4px 0 0;
+  margin-top: auto;
   color: #FFCC09;
   font-weight: 700;
   font-size: 0.9rem;

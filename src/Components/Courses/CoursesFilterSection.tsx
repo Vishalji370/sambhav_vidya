@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
 import "./CoursesFilterSection.css";
 import { FaChevronDown } from "react-icons/fa";
 import { openLookingForPopup } from "../LookingForPopup";
@@ -361,10 +362,11 @@ const coursesData = [
   },
   
 
-
 ];
 
 const CoursesFilterSection = () => {
+  const [searchParams] = useSearchParams();
+
   const [filters, setFilters] = useState({
     university: "",
     course: "",
@@ -373,6 +375,14 @@ const CoursesFilterSection = () => {
   });
 
   const [activeDropdown, setActiveDropdown] = useState(null);
+
+  // ✅ URL query param se university filter auto-set
+  useEffect(() => {
+    const universityFromUrl = searchParams.get("university");
+    if (universityFromUrl) {
+      setFilters((prev) => ({ ...prev, university: universityFromUrl }));
+    }
+  }, [searchParams]);
 
   const handleSelect = (type, value) => {
     setFilters({ ...filters, [type]: value });
@@ -397,21 +407,16 @@ const CoursesFilterSection = () => {
 
       {/* LEFT FILTER */}
       <div className="filter-sidebar">
-
         <h3>Filters</h3>
 
-        {/* DROPDOWN FILTERS */}
-        {["university", "course", "specialization", ].map((type) => (
+        {["university", "course", "specialization"].map((type) => (
           <div
             className={`dropdown ${activeDropdown === type ? "dropdown--open" : ""}`}
             key={type}
           >
-
             <button
               className="dropdown-btn"
-              onClick={() =>
-                setActiveDropdown(activeDropdown === type ? null : type)
-              }
+              onClick={() => setActiveDropdown(activeDropdown === type ? null : type)}
               aria-expanded={activeDropdown === type}
             >
               <span className="dropdown-btn__label">
@@ -429,55 +434,37 @@ const CoursesFilterSection = () => {
                 ))}
               </div>
             )}
-
           </div>
         ))}
 
-        {/* CLEAR */}
         <button
           className="clear-btn"
-          onClick={() =>
-            setFilters({
-              university: "",
-              course: "",
-              specialization: "",
-              duration: "",
-            })
-          }
+          onClick={() => setFilters({ university: "", course: "", specialization: "", duration: "" })}
         >
           Clear All
         </button>
-
       </div>
 
       {/* RIGHT CONTENT */}
       <div className="courses-content">
-
         <h2>Explore Top Programs</h2>
 
         <div className="courses-grid">
           {filteredData.map((item) => (
             <div key={item.id} className="course-card">
-
-              {/* IMAGE */}
               <img src={item.image} alt="course" />
-
-              {/* CONTENT */}
               <div className="card-content">
                 <span className="tag">{item.university}</span>
                 <h3>{item.course}</h3>
                 <p>{item.specialization}</p>
                 <p className="duration">{item.duration}</p>
-
                 <button type="button" className="apply-btn" onClick={() => openLookingForPopup()}>
                   Apply Now
                 </button>
               </div>
-
             </div>
           ))}
         </div>
-
       </div>
 
     </section>
