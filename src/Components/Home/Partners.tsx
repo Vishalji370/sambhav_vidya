@@ -4,16 +4,16 @@ import { useNavigate } from "react-router-dom";
 import "./Partners.css";
 
 const partners = [
-  { name: "LPU University", logo: "/public/CourseLogo/1.png", courses: 5 },
-  { name: "UPES", logo: "/public/CourseLogo/3.png", courses: 5 },
-  { name: "Galgotias University", logo: "/public/CourseLogo/4.png", courses: 5 },
-  { name: "Manav Rachna University", logo: "/public/CourseLogo/5.png", courses: 5 },
-  { name: "Shoolini University", logo: "/public/CourseLogo/6.png", courses: 5 },
-  { name: "Sharda University", logo: "/public/CourseLogo/7.png", courses: 5 },
-  { name: "Manipal University", logo: "/public/CourseLogo/8.png", courses: 5 },
-  { name: "GLA University", logo: "/public/CourseLogo/9.png", courses: 5 },
-  { name: "Chandigarh University", logo: "/public/CourseLogo/10.png", courses: 5 },
-  { name: "Amity University", logo: "/public/CourseLogo/11.png", courses: 5 },
+  { name: "LPU University", logo: "/CourseLogo/1.png", courses: 5 },
+  { name: "UPES", logo: "/CourseLogo/3.png", courses: 5 },
+  { name: "Galgotias University", logo: "/CourseLogo/4.png", courses: 5 },
+  { name: "Manav Rachna University", logo: "/CourseLogo/5.png", courses: 5 },
+  { name: "Shoolini University", logo: "/CourseLogo/6.png", courses: 5 },
+  { name: "Sharda University", logo: "/CourseLogo/7.png", courses: 5 },
+  { name: "Manipal University", logo: "/CourseLogo/8.png", courses: 5 },
+  { name: "GLA University", logo: "/CourseLogo/9.png", courses: 5 },
+  { name: "Chandigarh University", logo: "/CourseLogo/10.png", courses: 5 },
+  { name: "Amity University", logo: "/CourseLogo/11.png", courses: 5 },
 ];
 
 // Partners name → CoursesData university name exact match
