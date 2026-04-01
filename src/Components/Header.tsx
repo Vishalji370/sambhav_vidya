@@ -6,8 +6,6 @@ import "./Header.css";
 const navLinks = [
   { label: "Home",     path: "/" },
   { label: "Courses",  path: "/courses" },
-  //{ label: "Partners", path: "/partners" },
-  //{ label: "Blog",     path: "/blog" },
   { label: "About",    path: "/about" },
   { label: "Contact",  path: "/contact" },
 ];
@@ -22,17 +20,14 @@ const Header = () => {
   const ctaRef    = useRef(null);
   const navbarRef = useRef(null);
 
-  /* ── Scroll shadow ── */
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  /* ── GSAP entrance — runs ONLY ONCE on first mount ── */
   useEffect(() => {
     const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
-
     tl.fromTo(navbarRef.current,
         { y: -80, opacity: 0 },
         { y: 0,   opacity: 1, duration: 0.55 }
@@ -52,11 +47,9 @@ const Header = () => {
         { scale: 1,   opacity: 1, duration: 0.35 },
         "-=0.2"
       );
-
     return () => tl.kill();
-  }, []); // ← empty array = only on first page load
+  }, []);
 
-  /* ── Close drawer on route change ── */
   useEffect(() => {
     setMenuOpen(false);
   }, [location.pathname]);
@@ -68,15 +61,12 @@ const Header = () => {
         className={`navbar ${scrolled ? "navbar--scrolled" : ""}`}
       >
         {/* Logo */}
-        <Link
-          to="/"
-          className="logo"
-          ref={logoRef}
-        >
-          <div className="logo__icon">E</div>
-          <span className="logo__text">
-           Sambhav <span>Vidya</span>
-          </span>
+        <Link to="/" className="logo" ref={logoRef}>
+          <img
+            src="/Logo/img1.png"
+            alt="Sambhav Vidya"
+            className="logo__img"
+          />
         </Link>
 
         <div className="navbar__spacer" />
