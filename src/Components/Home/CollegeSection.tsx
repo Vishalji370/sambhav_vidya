@@ -47,6 +47,20 @@ const data = [
 
     img: "/Drone/Card 6.jpeg",
   },
+  {
+    name: "Data Engineering Essentials",
+    location:
+      "Learn to build scalable data pipelines using Apache Spark (PySpark) and Databricks. Hands-on labs cover ETL automation and data quality.",
+    course: "Duration: As per program",
+    img: "/Drone/Card 7.webp",
+  },
+  {
+    name: "Introduction to Robotics & AI",
+    location:
+      "Explore Robotics & AI with demos, AI game design activities, sensor experiments, and beginner-friendly drone building sessions.",
+    course: "Duration: As per program",
+    img: "/Drone/Card 8.jpeg",
+  },
 ];
 
 const CollegeSection = () => {
@@ -134,7 +148,7 @@ const CollegeSection = () => {
           >
             {/* IMAGE */}
             <div className="college__img">
-              <img src={item.img} alt="" />
+              <img src={item.img} alt={item.name} loading="lazy" />
 
               <div className="college__overlay"></div>
 

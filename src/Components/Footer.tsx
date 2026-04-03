@@ -23,7 +23,7 @@ const Footer = () => {
         <h2 className="logo">Sambhav Vidya</h2>
 
         <p className="tagline">
-         <span> plot no 1 sector 27 Golf course road Gurgaon</span>
+         <span> Plot no 1 Sector 27 Golf course road Gurgaon</span>
         </p>
 
         <div className="footer__contact">
