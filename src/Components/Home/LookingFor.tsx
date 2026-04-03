@@ -1,9 +1,7 @@
 import React, { useEffect, useRef } from "react";
-import { useNavigate } from "react-router-dom";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { FaBook, FaUniversity, FaRocket } from "react-icons/fa";
-import { openLookingForPopup } from "../LookingForPopup";
 import "./LookingFor.css";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -30,7 +28,6 @@ const cards = [
 ];
 
 const LookingFor = () => {
-  const navigate = useNavigate();
   const sectionRef = useRef<HTMLElement | null>(null);
   const headingRef = useRef<HTMLDivElement | null>(null);
   const searchRef = useRef<HTMLDivElement | null>(null);
@@ -66,11 +63,6 @@ const LookingFor = () => {
     return () => ctx.revert();
   }, []);
 
-  const handleCard = (card: (typeof cards)[0]) => {
-    if (card.type === "link" && card.path) navigate(card.path);
-    else openLookingForPopup();
-  };
-
   return (
     <section className="lf" ref={sectionRef}>
       <div className="lf__bg-pattern" />
@@ -89,19 +81,6 @@ const LookingFor = () => {
               cardsRef.current[i] = el;
             }}
             className="lf__card"
-            role="button"
-            tabIndex={0}
-            onClick={(e) => {
-              e.preventDefault();
-              e.stopPropagation();
-              handleCard(card);
-            }}
-            onKeyDown={(e) => {
-              if (e.key === "Enter" || e.key === " ") {
-                e.preventDefault();
-                handleCard(card);
-              }
-            }}
           >
             <div className="lf__card-icon">{card.icon}</div>
             <div className="lf__card-glow" />
