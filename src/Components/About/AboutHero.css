@@ -6,12 +6,21 @@
   /* BACKGROUND IMAGE */
   /* yaha apni image ka path do */
 
+  /* prevent tiny horizontal overflow on mid screens */
+  overflow-x: clip;
 }
 
 /* LEFT */
 .about-hero .hero-left {
   flex: 1 1 520px;
   min-width: 320px;
+}
+
+/* Mid screens pe columns ki min-width overflow na kare */
+@media (max-width: 1200px) {
+  .about-hero .hero-left {
+    min-width: 0;
+  }
 }
 
 .about-hero .tag {
@@ -84,12 +93,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: visible;
+  overflow: hidden;
 }
 
 .about-hero .circle img {
-  width: 112%;
-  height: 112%;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
 }
 
@@ -136,23 +145,43 @@
 
 /* Desktop: don't wrap (prevents image dropping down) */
 .about-hero {
-  flex-wrap: nowrap;
+  /* allow wrap on mid screens to avoid horizontal scrolling */
+  flex-wrap: wrap;
   gap: 28px;
 }
 
 /* ========================= */
-/* 💻 TABLET (992px) */
+/* 💻 LARGE TABLET (1200px) */
+/* ========================= */
+@media (max-width: 1200px) {
+
+  .about-hero .hero-text h1 {
+    font-size: 52px;
+  }
+
+  .about-hero .circle {
+    width: clamp(250px, 35vw, 420px);
+    height: clamp(250px, 35vw, 420px);
+  }
+}
+
+/* ========================= */
+/* 📱 TABLET (992px) */
 /* ========================= */
 @media (max-width: 992px) {
 
   .about-hero {
     flex-direction: column;
+    align-items: center;
     text-align: center;
-    padding: 40px 5%;
+    gap: 40px;
+    padding: 22px 5% 34px;
   }
 
   .about-hero .hero-left {
+    flex: none;
     width: 100%;
+    min-width: 0; /* prevent overflow on small screens */
   }
 
   .about-hero .hero-text h1 {
@@ -160,25 +189,42 @@
   }
 
   .about-hero .desc {
-    margin: 15px auto;
+    max-width: 100%;
   }
 
   .about-hero .hero-buttons {
     justify-content: center;
   }
 
+  /* IMAGE CENTER */
   .about-hero .hero-right {
-    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
   }
 
   .about-hero .circle {
-    width: 320px;
-    height: 320px;
+    margin-left: 0;
+    margin-right: 0;
   }
 
-  .about-hero .arrow1,
-  .about-hero .arrow2 {
-    display: none; /* 🔥 arrows hide (safe UI) */
+  /* ICON POSITION FIX */
+  .about-hero .icon1 {
+    right: 0;
+  }
+
+  .about-hero .icon2 {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .about-hero .icon3 {
+    right: 20%;
+  }
+
+  /* ARROWS HIDE (clean look) */
+  .about-hero .arrow {
+    display: none;
   }
 }
 
@@ -188,7 +234,7 @@
 @media (max-width: 768px) {
 
   .about-hero {
-    padding: 30px 20px;
+    padding: 18px 5% 28px;
   }
 
   .about-hero .hero-text h1 {
@@ -198,51 +244,27 @@
 
   .about-hero .desc {
     font-size: 14px;
-    max-width: 100%;
   }
 
   .about-hero .btn {
-    padding: 12px 20px;
+    padding: 12px 22px;
     font-size: 14px;
   }
 
-  .about-hero .hero-buttons {
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .about-hero .watch img {
-    width: 35px;
-    height: 35px;
-  }
-
+  /* IMAGE SIZE */
   .about-hero .circle {
     width: 260px;
     height: 260px;
   }
 
-  .about-hero .circle img {
-    width: 120%;
-  }
-
-  /* ICON FIX */
+  /* ICON SMALL */
   .about-hero .icon {
     padding: 8px;
   }
 
-  .about-hero .icon1 {
-    top: 10%;
-    right: -10px;
-  }
-
-  .about-hero .icon2 {
-    top: -10px;
-    left: 45%;
-  }
-
-  .about-hero .icon3 {
-    bottom: 5%;
-    right: 10%;
+  .about-hero .icon img {
+    width: 20px;
+    height: 20px;
   }
 }
 
@@ -251,16 +273,21 @@
 /* ========================= */
 @media (max-width: 480px) {
 
+  .about-hero {
+    padding: 14px 4% 24px;
+  }
+
   .about-hero .hero-text h1 {
     font-size: 26px;
   }
 
-  .about-hero .tag {
-    font-size: 12px;
-  }
-
   .about-hero .desc {
     font-size: 13px;
+  }
+
+  .about-hero .hero-buttons {
+    flex-direction: column;
+    gap: 12px;
   }
 
   .about-hero .circle {
@@ -268,23 +295,20 @@
     height: 220px;
   }
 
-  .about-hero .icon {
-    padding: 6px;
-  }
-
-  /* icons inside safe zone */
+  /* ICON ADJUST */
   .about-hero .icon1 {
-    top: 5%;
+    top: 10%;
     right: 0;
   }
 
   .about-hero .icon2 {
-    top: 0;
-    left: 40%;
+    top: -10px;
   }
 
   .about-hero .icon3 {
-    bottom: 0;
-    right: 5%;
+    bottom: 5%;
+    right: 10%;
   }
 }
+
+

@@ -1,0 +1,294 @@
+.ourapproach-section {
+  padding: 50px 6%;
+  font-family: "Poppins", sans-serif;
+  /* make sure hover translateX / 3D image never cause horizontal scroll */
+  overflow-x: clip;
+}
+
+/* MAIN HEADING */
+.ourapproach-heading {
+  text-align: center;
+  font-size: 2.4rem;
+  color: #545453;
+  margin-bottom: 50px;
+}
+
+/* CARD */
+.ourapproach-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 10px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+}
+
+/* CARD TITLE */
+.ourapproach-card-title {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 1.5rem;
+  color: #545453;
+}
+
+/* CONTENT */
+.ourapproach-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* IMAGE */
+/* IMAGE */
+.ourapproach-image {
+  flex: 1;
+  perspective: 1000px;
+}
+
+.ourapproach-image img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 20px;
+
+  /* 🔥 ALWAYS 3D LOOK */
+  transform: rotateY(15deg) rotateX(5deg) scale(1.05);
+  box-shadow: 20px 25px 50px rgba(0,0,0,0.2);
+
+  transition: transform 0.6s ease, box-shadow 0.6s ease;
+}
+
+/* ✨ NEW HOVER EFFECT */
+.ourapproach-image:hover img {
+  transform: rotateY(18deg) rotateX(8deg) scale(1.08);
+  box-shadow: 30px 35px 60px rgba(0,0,0,0.25);
+}
+
+/* POINTS */
+.ourapproach-points {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+   padding: 0px 0px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  
+}
+.ourapproach-point h5 {
+  font-size: 0.95rem;
+  margin-left: 20px;
+  font-weight: 600;
+  margin-bottom: 1px;
+  color: #545453;
+}
+.ourapproach-point p {
+  font-size: 0.8rem;
+ margin-left: 20px;
+  color: #666;
+}
+/* EACH POINT */
+.ourapproach-point {
+  padding: px 20px;
+  border-radius: 10px;
+
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.ourapproach-point:hover {
+  background: #FFCC09;
+  transform: translateX(8px) scale(1.03);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+
+}
+/* ABOVE CARD */
+.ourapproach-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.ourapproach-main-title {
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: #545453;
+}
+
+.ourapproach-subtitle {
+  font-size: 1.1rem;
+  margin-top: -10px;
+  color: #FFCC09;
+  margin: 5px 0 10px;
+}
+
+.ourapproach-desc {
+  font-size: 0.9rem;
+  color: #666;
+  max-width: 600px;
+  margin: auto;
+  line-height: 1.6;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* CARD HEADING */
+.ourapproach-card-heading {
+  text-align: center;
+  font-size: 1.3rem;
+  margin-bottom: 25px;
+  color: #545453;
+}
+/* ========================= */
+/* 💻 LARGE TABLET (1200px) */
+/* ========================= */
+@media (max-width: 1200px) {
+
+  .ourapproach-heading {
+    font-size: 2.1rem;
+  }
+
+  .ourapproach-main-title {
+    font-size: 1.7rem;
+  }
+
+  .ourapproach-image img {
+    max-width: 420px;
+  }
+}
+
+/* ========================= */
+/* 📱 TABLET (992px) */
+/* ========================= */
+@media (max-width: 992px) {
+
+  .ourapproach-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+  }
+
+  .ourapproach-image {
+    display: flex;
+    justify-content: center;
+  }
+
+  .ourapproach-image img {
+    transform: rotateY(0deg) rotateX(0deg) scale(1); /* 🔥 remove heavy 3D */
+    max-width: 380px;
+  }
+
+  .ourapproach-points {
+    width: 100%;
+    align-items: center;
+  }
+
+  .ourapproach-point {
+    width: 100%;
+    max-width: 500px;
+    text-align: left;
+  }
+}
+
+/* ========================= */
+/* 📱 MOBILE (768px) */
+/* ========================= */
+@media (max-width: 768px) {
+
+  .ourapproach-section {
+    padding: 40px 5%;
+  }
+
+  .ourapproach-heading {
+    font-size: 1.8rem;
+  }
+
+  .ourapproach-main-title {
+    font-size: 1.5rem;
+  }
+
+  .ourapproach-subtitle {
+    font-size: 1rem;
+  }
+
+  .ourapproach-desc {
+    font-size: 0.85rem;
+  }
+
+  .ourapproach-card {
+    padding: 15px;
+  }
+
+  .ourapproach-card-heading {
+    font-size: 1.1rem;
+  }
+
+  /* IMAGE */
+  .ourapproach-image img {
+    max-width: 300px;
+    box-shadow: 15px 15px 30px rgba(0,0,0,0.15);
+  }
+
+  /* POINT TEXT */
+  .ourapproach-point h5 {
+    font-size: 0.9rem;
+  }
+
+  .ourapproach-point p {
+    font-size: 0.75rem;
+  }
+
+  /* HOVER DISABLE (mobile smoothness) */
+  .ourapproach-point:hover {
+    transform: none;
+    background: transparent;
+    box-shadow: none;
+  }
+}
+
+/* ========================= */
+/* 📱 SMALL MOBILE (480px) */
+/* ========================= */
+@media (max-width: 480px) {
+
+  .ourapproach-section {
+    padding: 30px 4%;
+  }
+
+  .ourapproach-heading {
+    font-size: 1.5rem;
+  }
+
+  .ourapproach-main-title {
+    font-size: 1.3rem;
+  }
+
+  .ourapproach-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .ourapproach-desc {
+    font-size: 0.8rem;
+  }
+
+  .ourapproach-card {
+    padding: 12px;
+    border-radius: 15px;
+  }
+
+  .ourapproach-image img {
+    max-width: 260px;
+    border-radius: 15px;
+  }
+
+  .ourapproach-point {
+    padding: 10px;
+  }
+
+  .ourapproach-point h5 {
+    font-size: 0.85rem;
+  }
+
+  .ourapproach-point p {
+    font-size: 0.7rem;
+  }
+}

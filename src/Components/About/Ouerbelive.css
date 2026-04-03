@@ -1,0 +1,448 @@
+/* ============================================
+   OurBelief.css  —  WHITE THEME + YELLOW ACCENT
+   Unique prefix: ob-  |  Section ID: our-belief-section
+   Fully isolated — no overlap with other sections
+   ============================================ */
+
+/* Font handled globally (Poppins) in index.css */
+
+/* ---------- CSS Variables ---------- */
+#our-belief-section {
+  --ob-primary: #f5c800;        /* yellow */
+  --ob-primary-dark: #d4a900;   /* darker yellow for hover */
+  --ob-accent: #ffdf4d;         /* light yellow */
+  --ob-bg: #ffffff;             /* white background */
+  --ob-card-bg: #fafaf7;        /* off-white cards */
+  --ob-border: rgba(0, 0, 0, 0.08);
+  --ob-text-main: #545453;
+  --ob-text-muted: #555;
+  --ob-shadow: rgba(245, 200, 0, 0.18);
+  --ob-radius: 24px;
+  --ob-transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* ---------- Section Base ---------- */
+#our-belief-section {
+  position: relative;
+  background: var(--ob-bg);
+  overflow: hidden;
+  padding: 100px 5vw;
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+/* ---------- Background Blobs ---------- */
+.ob-bg-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  pointer-events: none;
+  z-index: 0;
+}
+.ob-bg-blob--1 {
+  width: 520px;
+  height: 520px;
+  background: radial-gradient(circle, rgba(245, 200, 0, 0.15), transparent 70%);
+  top: -120px;
+  left: -100px;
+  animation: ob-blobPulse 8s ease-in-out infinite alternate;
+}
+.ob-bg-blob--2 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(245, 200, 0, 0.08), transparent 70%);
+  bottom: -80px;
+  right: 10%;
+  animation: ob-blobPulse 10s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes ob-blobPulse {
+  from { transform: scale(1) translate(0, 0); }
+  to   { transform: scale(1.15) translate(20px, -30px); }
+}
+
+/* ---------- Container ---------- */
+.ob-container {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* ============================================
+   LEFT SIDE — CONTENT
+   ============================================ */
+.ob-content-side {
+  flex: 1 1 50%;
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity var(--ob-transition), transform var(--ob-transition);
+}
+.ob-section--visible .ob-content-side {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 0.1s;
+}
+
+/* Eyebrow */
+.ob-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ob-primary-dark);
+  margin-bottom: 18px;
+}
+.ob-eyebrow__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--ob-primary);
+  animation: ob-dotBlink 2s ease-in-out infinite;
+}
+@keyframes ob-dotBlink {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.4; transform: scale(0.7); }
+}
+
+/* Heading */
+.ob-heading {
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.05;
+  margin: 0 0 28px;
+}
+.ob-heading__line {
+  display: block;
+}
+.ob-heading__line--fire {
+  font-size: clamp(2.4rem, 5vw, 3.8rem);
+  color: var(--ob-text-main);
+}
+.ob-heading__line--accent {
+  font-size: clamp(3rem, 7vw, 5.2rem);
+  color: var(--ob-primary-dark);
+  -webkit-text-stroke: 1px rgba(212, 169, 0, 0.3);
+}
+
+/* Body Text */
+.ob-body-text {
+  margin: 0 0 12px;
+  line-height: 1.7;
+}
+.ob-body-text--bold {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--ob-text-main);
+}
+.ob-body-text--highlight {
+  font-size: 1.1rem;
+  color: var(--ob-text-muted);
+}
+.ob-body-text--sub {
+  font-size: 0.95rem;
+  color: var(--ob-text-muted);
+  margin-top: 4px;
+  margin-bottom: 24px;
+}
+
+.ob-inline-highlight {
+  color: var(--ob-primary-dark);
+  font-style: italic;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Belief List */
+.ob-belief-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.ob-belief-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 18px;
+  background: var(--ob-card-bg);
+  border: 1px solid var(--ob-border);
+  border-radius: 14px;
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: ob-slideIn var(--ob-transition) forwards;
+  cursor: default;
+  transition: background 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+
+@keyframes ob-slideIn {
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.ob-belief-item:hover {
+  background: #fffbea;
+  border-color: rgba(245, 200, 0, 0.5);
+  box-shadow: 0 4px 20px var(--ob-shadow);
+}
+
+/* React Lucide icon wrapper */
+.ob-belief-item__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: rgba(245, 200, 0, 0.15);
+  color: var(--ob-primary-dark);
+  flex-shrink: 0;
+  transition: background 0.3s, color 0.3s;
+}
+.ob-belief-item:hover .ob-belief-item__icon {
+  background: var(--ob-primary);
+  color: #1a1a2e;
+}
+
+.ob-belief-item__text {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--ob-text-main);
+  flex: 1;
+}
+
+.ob-belief-item__bar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 3px;
+  height: 100%;
+  background: var(--ob-primary);
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 0.3s ease;
+  border-radius: 0 2px 2px 0;
+}
+.ob-belief-item:hover .ob-belief-item__bar {
+  transform: scaleY(1);
+}
+
+/* ============================================
+   RIGHT SIDE — IMAGE
+   ============================================ */
+.ob-image-side {
+  flex: 1 1 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity var(--ob-transition), transform var(--ob-transition);
+  transition-delay: 0.25s;
+}
+.ob-section--visible .ob-image-side {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Image Frame */
+.ob-image-frame {
+  position: relative;
+  width: 420px;
+  height: 480px;
+  max-width: 100%;
+}
+
+/* Orbiting rings */
+.ob-image-orbit {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px dashed rgba(245, 200, 0, 0.35);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: ob-spinOrbit linear infinite;
+  pointer-events: none;
+}
+.ob-image-orbit--1 {
+  width: 500px;
+  height: 500px;
+  animation-duration: 18s;
+}
+.ob-image-orbit--2 {
+  width: 580px;
+  height: 580px;
+  animation-duration: 28s;
+  animation-direction: reverse;
+  border-color: rgba(245, 200, 0, 0.18);
+}
+@keyframes ob-spinOrbit {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to   { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Orbit dots */
+.ob-orbit-dot {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.ob-orbit-dot--a {
+  background: var(--ob-primary);
+  box-shadow: 0 0 10px var(--ob-primary);
+}
+.ob-orbit-dot--b {
+  background: var(--ob-accent);
+  box-shadow: 0 0 10px var(--ob-accent);
+}
+
+/* Main image wrapper */
+.ob-image-inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 340px;
+  height: 400px;
+  border-radius: var(--ob-radius);
+  overflow: hidden;
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.12),
+    0 0 0 1px var(--ob-border),
+    0 0 0 6px rgba(245, 200, 0, 0.12);
+  animation: ob-imageBreathe 6s ease-in-out infinite;
+}
+@keyframes ob-imageBreathe {
+  0%, 100% { transform: translate(-50%, -50%) scale(1);     }
+  50%       { transform: translate(-50%, -50%) scale(1.025); }
+}
+
+.ob-main-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.ob-image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    160deg,
+    rgba(245, 200, 0, 0.06) 0%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.15) 100%
+  );
+}
+
+/* Floating cards */
+.ob-float-card {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: #ffffff;
+  border: 1px solid rgba(245, 200, 0, 0.3);
+  border-radius: 50px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--ob-text-main);
+  white-space: nowrap;
+  z-index: 2;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08), 0 2px 8px var(--ob-shadow);
+}
+.ob-float-card--top {
+  top: 20px;
+  right: -20px;
+  animation: ob-floatUp 4s ease-in-out infinite;
+}
+.ob-float-card--bottom {
+  bottom: 30px;
+  left: -20px;
+  animation: ob-floatUp 4s ease-in-out infinite 2s;
+}
+.ob-float-card__emoji { font-size: 1.1rem; }
+
+@keyframes ob-floatUp {
+  0%, 100% { transform: translateY(0px);  }
+  50%       { transform: translateY(-8px); }
+}
+
+/* Corner accents */
+.ob-corner {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-color: var(--ob-primary);
+  border-style: solid;
+  opacity: 0.7;
+}
+.ob-corner--tl {
+  top: 4px;
+  left: 4px;
+  border-width: 2px 0 0 2px;
+  border-radius: 4px 0 0 0;
+}
+.ob-corner--br {
+  bottom: 4px;
+  right: 4px;
+  border-width: 0 2px 2px 0;
+  border-radius: 0 0 4px 0;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 900px) {
+  #our-belief-section {
+    padding: 70px 5vw;
+  }
+  .ob-container {
+    flex-direction: column-reverse;
+    gap: 50px;
+  }
+  .ob-content-side,
+  .ob-image-side {
+    flex: unset;
+    width: 100%;
+    transform: none;
+  }
+  .ob-image-frame {
+    width: 100%;
+    max-width: 380px;
+    height: 380px;
+    margin: 0 auto;
+  }
+  .ob-image-inner {
+    width: 280px;
+    height: 320px;
+  }
+  .ob-image-orbit--1 { width: 360px; height: 360px; }
+  .ob-image-orbit--2 { width: 420px; height: 420px; }
+}
+
+@media (max-width: 480px) {
+  .ob-heading__line--accent {
+    font-size: 3rem;
+  }
+  .ob-float-card--top    { right: 0; }
+  .ob-float-card--bottom { left: 0; }
+  .ob-image-inner { width: 240px; height: 280px; }
+}

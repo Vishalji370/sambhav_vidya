@@ -1,0 +1,182 @@
+.aboutus-section {
+  padding: 80px 6%;
+  font-family: "Poppins", sans-serif;
+  /* prevent any tiny horizontal scroll from animations/shadows */
+  overflow-x: clip;
+}
+
+.aboutus-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+/* IMAGE SIDE */
+.aboutus-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  perspective: 1000px; /* important for 3D feel */
+}
+
+.aboutus-image img {
+  width: 100%;
+  max-width: 450px;
+  border-top-right-radius: 80px;
+  border-bottom-left-radius: 80px;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+/* HOVER EFFECT */
+.aboutus-image:hover img {
+  transform: rotateY(12deg) scale(1.03);
+}
+
+/* CONTENT SIDE */
+.aboutus-content {
+  flex: 1;
+  max-width: 500px;
+}
+
+.aboutus-content h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color:#545453;
+  margin-bottom: 15px;
+}
+
+.aboutus-content p {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* BUTTON */
+.aboutus-btn {
+  padding: 10px 20px;
+  background: #ff6a3d;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.aboutus-btn:hover {
+  background: #e85a2f;
+}
+
+/* ========================= */
+/* 💻 LARGE TABLET (1200px) */
+/* ========================= */
+@media (max-width: 1200px) {
+
+  .aboutus-content h2 {
+    font-size: 1.8rem;
+  }
+
+  .aboutus-content p {
+    font-size: 0.9rem;
+  }
+
+  .aboutus-image img {
+    max-width: 380px;
+  }
+}
+
+/* ========================= */
+/* 📱 TABLET (992px) */
+/* ========================= */
+@media (max-width: 992px) {
+
+  .aboutus-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+  }
+
+  .aboutus-content {
+    max-width: 100%;
+  }
+
+  .aboutus-content h2 {
+    font-size: 1.6rem;
+  }
+
+  .aboutus-content p {
+    font-size: 0.9rem;
+  }
+
+  /* IMAGE CENTER */
+  .aboutus-image {
+    justify-content: center;
+  }
+
+  .aboutus-image img {
+    max-width: 350px;
+  }
+}
+
+/* ========================= */
+/* 📱 MOBILE (768px) */
+/* ========================= */
+@media (max-width: 768px) {
+
+  .aboutus-section {
+    padding: 60px 5%;
+  }
+
+  .aboutus-content h2 {
+    font-size: 1.4rem;
+  }
+
+  .aboutus-content p {
+    font-size: 0.85rem;
+  }
+
+  .aboutus-btn {
+    padding: 9px 18px;
+    font-size: 0.8rem;
+  }
+
+  .aboutus-image img {
+    max-width: 300px;
+    border-top-right-radius: 60px;
+    border-bottom-left-radius: 60px;
+  }
+}
+
+/* ========================= */
+/* 📱 SMALL MOBILE (480px) */
+/* ========================= */
+@media (max-width: 480px) {
+
+  .aboutus-section {
+    padding: 50px 4%;
+  }
+
+  .aboutus-content h2 {
+    font-size: 1.2rem;
+  }
+
+  .aboutus-content p {
+    font-size: 0.8rem;
+    line-height: 1.5;
+  }
+
+  .aboutus-btn {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .aboutus-image img {
+    max-width: 260px;
+    border-top-right-radius: 40px;
+    border-bottom-left-radius: 40px;
+  }
+}

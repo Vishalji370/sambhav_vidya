@@ -1,0 +1,337 @@
+.serve-section {
+  padding: 0px 8%;
+  font-family: "Poppins", sans-serif;
+  /* ensure floating shapes don't push layout horizontally */
+  overflow-x: clip;
+}
+
+/* HEADING */
+.serve-heading {
+  text-align: center;
+}
+
+.serve-heading h1 {
+  font-size: 48px;
+  color: #545453;
+  position: relative;
+  display: inline-block;
+}
+
+.serve-heading h1::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -0px;
+  width: 80px;
+  height: 4px;
+  background: #ffcc09;
+}
+
+/* LAYOUT */
+.serve-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+/* LEFT */
+.serve-left {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+/* IMAGE WRAPPER */
+.image-wrapper {
+  position: relative;
+  width: 420px;
+  height: auto;   /* ❌ fixed height hatao */
+  
+  transform: rotateY(-10deg) rotateX(5deg);
+  transition: 0.4s ease;
+
+  overflow: hidden;  /* 🔥 image bahar nahi phategi */
+}
+.image-wrapper:hover {
+  transform: rotateY(0deg) rotateX(0deg) scale(1.02); /* 🔥 small zoom */
+}
+/* IMAGE */
+.image-wrapper img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;   /* 🔥 FULL IMAGE DIKHEGI */
+  background: #fff;      /* empty space clean lage */
+  border-radius: 20px;
+
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+/* FLOATING SHAPES */
+.shape {
+  position: absolute;
+  border-radius: 50%;
+  animation: float 4s ease-in-out infinite;
+}
+
+.shape1 {
+  width: 60px;
+  height: 60px;
+  background: #ffcc09;
+  top: -20px;
+  left: -20px;
+}
+
+.shape2 {
+  width: 40px;
+  height: 40px;
+  background: #1abc9c;
+  bottom: -15px;
+  right: -10px;
+  animation-delay: 1s;
+}
+
+.shape3 {
+  width: 25px;
+  height: 25px;
+  background: #0b3d91;
+  top: 50%;
+  left: -30px;
+  animation-delay: 2s;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0px); }
+}
+
+/* RIGHT CONTENT */
+.serve-right {
+  flex: 1;
+  padding-bottom: 50px;
+}
+
+/* SHORT TEXT */
+.serve-desc {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+/* BULLET POINTS (REAL BULLETS 🔥) */
+.serve-list {
+  margin-bottom: 15px;
+  padding-left: 20px;
+}
+
+.serve-list li {
+  margin-bottom: 8px;
+  font-size: 15px;
+  color: #444;
+}
+
+/* SMALL TEXT */
+.serve-small {
+  font-size: 14px;
+  color: #777;
+}
+/* ─── SCROLL ANIMATION CLASSES ───────────────────────────────────
+   Paste these at the TOP of your WhoWeServe.css file
+──────────────────────────────────────────────────────────────── */
+
+.ws-animate {
+  opacity: 0;
+  transition-property: opacity, transform;
+  transition-duration: 0.75s;
+  transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--ws-delay, 0s);
+  will-change: opacity, transform;
+}
+
+/* Starting positions */
+.ws-fade-down  { transform: translateY(-50px); }
+.ws-fade-up    { transform: translateY(50px);  }
+.ws-fade-left  { transform: translateX(-70px); }
+.ws-fade-right { transform: translateX(70px);  }
+
+/* Visible state — NO !important so hover still works */
+.ws-visible {
+  opacity: 1;
+  transform: translateY(0) translateX(0);
+}
+
+/* ========================= */
+/* 💻 LARGE TABLET (1200px) */
+/* ========================= */
+@media (max-width: 1200px) {
+
+  .serve-heading h1 {
+    font-size: 42px;
+  }
+
+  .image-wrapper {
+    width: 360px;
+  }
+}
+
+/* ========================= */
+/* 📱 TABLET (992px) */
+/* ========================= */
+@media (max-width: 992px) {
+
+  .serve-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+  }
+
+  .serve-right {
+    padding-bottom: 0;
+  }
+
+  .serve-heading h1 {
+    font-size: 36px;
+  }
+
+  /* IMAGE CENTER */
+  .serve-left {
+    justify-content: center;
+  }
+
+  .image-wrapper {
+    width: 320px;
+    transform: none; /* 🔥 3D hata diya for smooth */
+  }
+
+  /* SHAPES ADJUST */
+  .shape1 {
+    top: -10px;
+    left: -10px;
+  }
+
+  .shape2 {
+    bottom: -10px;
+    right: -10px;
+  }
+
+  .shape3 {
+    left: -15px;
+  }
+
+  /* LIST ALIGN */
+  .serve-list {
+    text-align: left;
+    display: inline-block;
+  }
+
+  /* ANIMATION FIX */
+  .ws-fade-left,
+  .ws-fade-right {
+    transform: translateY(40px); /* horizontal → vertical */
+  }
+}
+
+/* ========================= */
+/* 📱 MOBILE (768px) */
+/* ========================= */
+@media (max-width: 768px) {
+
+  .serve-section {
+    padding: 40px 5%;
+  }
+
+  .serve-heading h1 {
+    font-size: 28px;
+  }
+
+  .serve-desc {
+    font-size: 14px;
+  }
+
+  .serve-list li {
+    font-size: 14px;
+  }
+
+  .serve-small {
+    font-size: 13px;
+  }
+
+  /* IMAGE */
+  .image-wrapper {
+    width: 260px;
+  }
+
+  .image-wrapper img {
+    border-radius: 15px;
+  }
+
+  /* SHAPES SMALL */
+  .shape1 {
+    width: 45px;
+    height: 45px;
+  }
+
+  .shape2 {
+    width: 30px;
+    height: 30px;
+  }
+
+  .shape3 {
+    width: 20px;
+    height: 20px;
+  }
+
+  /* HOVER DISABLE */
+  .image-wrapper:hover {
+    transform: none;
+  }
+}
+
+/* ========================= */
+/* 📱 SMALL MOBILE (480px) */
+/* ========================= */
+@media (max-width: 480px) {
+
+  .serve-section {
+    padding: 30px 4%;
+  }
+
+  .serve-heading h1 {
+    font-size: 24px;
+  }
+
+  .serve-desc {
+    font-size: 13px;
+  }
+
+  .serve-list li {
+    font-size: 13px;
+  }
+
+  .serve-small {
+    font-size: 12px;
+  }
+
+  .image-wrapper {
+    width: 220px;
+  }
+
+  /* SHAPES TIGHT ADJUST */
+  .shape1 {
+    top: -5px;
+    left: -5px;
+  }
+
+  .shape2 {
+    bottom: -5px;
+    right: -5px;
+  }
+
+  .shape3 {
+    left: -10px;
+  }
+}

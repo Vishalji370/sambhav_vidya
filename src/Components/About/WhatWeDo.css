@@ -1,0 +1,375 @@
+.whatwedo-section {
+  padding: 0px 6%;
+  font-family: "Poppins", sans-serif;
+  /* guard against horizontal movement from shapes/animations */
+  overflow-x: clip;
+}
+
+/* TOP HEADING */
+.whatwedo-main-heading {
+  text-align: center;
+  font-size: 2.4rem;
+  color: #545453;
+  margin-bottom: 50px;
+}
+
+/* LAYOUT */
+.whatwedo-container {
+  display: flex;
+  gap: 0px;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: -40px;
+}
+
+/* LEFT */
+.whatwedo-left {
+  flex: 1;
+  max-width: 500px;
+}
+
+.whatwedo-left p {
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+/* IMAGE */
+.whatwedo-image-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+}
+
+.whatwedo-image-wrapper img {
+  width: 100%;
+  border-top-right-radius: 80px;
+  border-bottom-left-radius: 80px;
+  position: relative;
+  z-index: 2;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+/* HOVER EFFECT */
+.whatwedo-image-wrapper:hover img {
+  transform: scale(1.05) rotate(1deg);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* DECOR SHAPES */
+.whatwedo-shape1 {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  background: #FFCC09;
+  border-radius: 50%;
+  top: -20px;
+  left: -20px;
+  z-index: 1;
+  opacity: 0.2;
+}
+
+.whatwedo-shape2 {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: #FFCC09;
+  border-radius: 20px;
+  bottom: -20px;
+  right: -20px;
+  z-index: 1;
+  opacity: 0.15;
+}
+
+/* RIGHT */
+.whatwedo-right {
+  flex: 1;
+  max-width: 450px;
+}
+
+.whatwedo-card-heading {
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  
+  color: #545453;
+}
+
+/* CARDS */
+.whatwedo-card-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.whatwedo-card {
+  display: flex;
+  align-items: center;
+
+  border-radius: 14px;
+  overflow: hidden;
+  height: auto;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
+
+}
+
+.whatwedo-card-bar {
+  width: 7px;
+  height: 100%;
+  background: linear-gradient(180deg, #FFCC09, #545453);
+}
+
+/* SMOOTH TRANSITION */
+.whatwedo-card {
+  display: flex;
+  align-items: center;
+  border-radius: 14px;
+  overflow: hidden;
+  height: auto;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+/* CONTENT TRANSITION */
+.whatwedo-card-content {
+  padding: 14px 16px;
+  transition: transform 0.25s ease;
+  flex: 1;
+  text-align: center;
+}
+
+/* HOVER EFFECT */
+.whatwedo-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(255, 204, 9, 0.45);
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.1);
+}
+
+/* CONTENT POP OUT EFFECT */
+.whatwedo-card:hover .whatwedo-card-content {
+  transform: scale(1.05);
+}
+
+/* LEFT BAR GLOW */
+.whatwedo-card:hover .whatwedo-card-bar {
+  width: 9px;
+  background: linear-gradient(180deg, #FFCC09, #000);
+}
+.whatwedo-card-content h5 {
+  font-size: 0.98rem;
+  margin: 0;
+  color: #545453;
+  line-height: 1.35;
+  width: 100%;
+}
+
+.whatwedo-card-content p {
+  font-size: 0.75rem;
+  color: #666;
+}
+
+/* TAGLINE */
+.whatwedo-tagline {
+  margin-top: 15px;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #777;
+}
+
+/* ========================= */
+/* 💻 LARGE TABLET (1200px) */
+/* ========================= */
+@media (max-width: 1200px) {
+
+  .whatwedo-main-heading {
+    font-size: 2.1rem;
+  }
+
+  .whatwedo-left,
+  .whatwedo-right {
+    max-width: 450px;
+  }
+
+  .whatwedo-image-wrapper {
+    max-width: 380px;
+  }
+}
+
+/* ========================= */
+/* 📱 TABLET (992px) */
+/* ========================= */
+@media (max-width: 992px) {
+
+  .whatwedo-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+    margin-top: 0;
+  }
+
+  .whatwedo-left,
+  .whatwedo-right {
+    max-width: 100%;
+  }
+
+  .whatwedo-left p {
+    font-size: 0.9rem;
+  }
+
+  /* IMAGE CENTER */
+  .whatwedo-image-wrapper {
+    margin: 0 auto;
+  }
+
+  /* SHAPES ADJUST */
+  .whatwedo-shape1 {
+    top: -10px;
+    left: -10px;
+  }
+
+  .whatwedo-shape2 {
+    bottom: -10px;
+    right: -10px;
+  }
+
+  /* CARD CENTER */
+  .whatwedo-card-list {
+    align-items: center;
+  }
+
+  .whatwedo-card {
+    width: 100%;
+    max-width: 420px;
+  }
+}
+
+/* ========================= */
+/* 📱 MOBILE (768px) */
+/* ========================= */
+@media (max-width: 768px) {
+
+  .whatwedo-section {
+    padding: 50px 5%;
+  }
+
+  .whatwedo-main-heading {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+  }
+
+  .whatwedo-left p {
+    font-size: 0.85rem;
+  }
+
+  .whatwedo-image-wrapper {
+    max-width: 320px;
+  }
+
+  /* IMAGE RADIUS SMALL */
+  .whatwedo-image-wrapper img {
+    border-top-right-radius: 60px;
+    border-bottom-left-radius: 60px;
+  }
+
+  .whatwedo-container {
+    gap: 26px;
+  }
+
+  .whatwedo-card-heading {
+    font-size: 1.05rem;
+    margin-bottom: 10px;
+  }
+
+  /* CARD */
+  .whatwedo-card {
+    padding: 0;
+    max-width: 520px;
+  }
+
+  .whatwedo-card-content {
+    padding: 14px 14px;
+  }
+
+  .whatwedo-card-content h5 {
+    font-size: 0.95rem;
+  }
+
+  .whatwedo-card-content p {
+    font-size: 0.75rem;
+  }
+}
+
+/* ========================= */
+/* 📱 SMALL MOBILE (480px) */
+/* ========================= */
+@media (max-width: 480px) {
+
+  .whatwedo-section {
+    padding: 40px 4%;
+  }
+
+  .whatwedo-main-heading {
+    font-size: 1.5rem;
+    margin-bottom: 18px;
+  }
+
+  .whatwedo-card-heading {
+    font-size: 1rem;
+    line-height: 1.25;
+    margin-bottom: 12px;
+  }
+
+  .whatwedo-left p {
+    font-size: 0.8rem;
+    line-height: 1.5;
+  }
+
+  .whatwedo-image-wrapper {
+    max-width: 260px;
+  }
+
+  .whatwedo-image-wrapper img {
+    border-top-right-radius: 40px;
+    border-bottom-left-radius: 40px;
+  }
+
+  /* SHAPES SMALL */
+  .whatwedo-shape1 {
+    width: 80px;
+    height: 80px;
+  }
+
+  .whatwedo-shape2 {
+    width: 70px;
+    height: 70px;
+  }
+
+  /* CARD FULL WIDTH + tighter spacing */
+  .whatwedo-card {
+    max-width: 100%;
+    border-radius: 16px;
+  }
+
+  .whatwedo-card-list {
+    gap: 8px;
+  }
+
+  .whatwedo-card-content {
+    padding: 10px 12px;
+  }
+
+  .whatwedo-card-content h5 {
+    font-size: 0.85rem;
+  }
+
+  .whatwedo-card-content p {
+    font-size: 0.7rem;
+  }
+
+  .whatwedo-tagline {
+    font-size: 0.75rem;
+    margin-top: 10px;
+  }
+}

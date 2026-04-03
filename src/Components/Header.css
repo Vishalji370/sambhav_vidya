@@ -61,7 +61,8 @@
 
 /* ✅ Logo image — desktop */
 .logo__img {
-  height: 95px;
+  /* keep logo inside navbar height to prevent layout jump */
+  height: calc(var(--navbar-height) - 10px);
   width: auto;
   object-fit: contain;
   display: block;
@@ -235,7 +236,7 @@
 
   /* ✅ Logo image — mobile thodi choti */
   .logo__img {
-    height: 74px;
+    height: calc(var(--navbar-height) - 12px);
   }
 }
 

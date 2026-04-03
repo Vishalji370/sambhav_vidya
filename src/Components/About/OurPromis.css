@@ -1,0 +1,470 @@
+/* ============================================
+   OurPromise.css
+   Unique prefix: op-  |  Section ID: our-promise-section
+   White theme + Yellow accent
+   Fully isolated — no overlap with other sections
+   ============================================ */
+
+/* Font handled globally (Poppins) in index.css */
+
+/* ---------- CSS Variables ---------- */
+#our-promise-section {
+  --op-yellow: #f5c800;
+  --op-yellow-dark: #d4a900;
+  --op-yellow-light: #fff9d6;
+  --op-bg: #ffffff;
+  --op-card-bg: #fafaf7;
+  --op-border: rgba(0, 0, 0, 0.07);
+  --op-text: #545453;
+  --op-muted: #555;
+  --op-shadow-yellow: rgba(245, 200, 0, 0.22);
+  --op-radius: 24px;
+}
+
+/* ---------- Section ---------- */
+#our-promise-section {
+  position: relative;
+  background: var(--op-bg);
+  overflow: hidden;
+  padding: 110px 5vw;
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+/* ---------- Decorative BG ---------- */
+.op-bg-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  pointer-events: none;
+  z-index: 0;
+}
+.op-bg-blob--1 {
+  width: 480px;
+  height: 480px;
+  background: radial-gradient(circle, rgba(245, 200, 0, 0.13), transparent 70%);
+  top: -80px;
+  right: -60px;
+}
+.op-bg-blob--2 {
+  width: 360px;
+  height: 360px;
+  background: radial-gradient(circle, rgba(245, 200, 0, 0.08), transparent 70%);
+  bottom: -60px;
+  left: 5%;
+}
+
+/* Diagonal stripe accent */
+.op-bg-stripe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    -55deg,
+    rgba(245, 200, 0, 0.03) 0px,
+    rgba(245, 200, 0, 0.03) 1px,
+    transparent 1px,
+    transparent 60px
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ---------- Container ---------- */
+.op-container {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 70px;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* ============================================
+   LEFT SIDE — IMAGE
+   ============================================ */
+.op-image-side {
+  flex: 1 1 48%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* keep visible even if animation fails */
+  opacity: 1;
+}
+
+.op-image-frame {
+  position: relative;
+  width: 420px;
+  height: 490px;
+  max-width: 100%;
+}
+
+/* Orbit rings — GSAP rotates these */
+.op-orbit {
+  position: absolute;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  pointer-events: none;
+  border-style: dashed;
+}
+.op-orbit--1 {
+  width: 500px;
+  height: 500px;
+  margin-top: -250px;
+  margin-left: -250px;
+  border-width: 1px;
+  border-color: rgba(245, 200, 0, 0.3);
+}
+.op-orbit--2 {
+  width: 590px;
+  height: 590px;
+  margin-top: -295px;
+  margin-left: -295px;
+  border-width: 1px;
+  border-color: rgba(245, 200, 0, 0.15);
+}
+
+.op-orbit-dot {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.op-orbit-dot--a {
+  background: var(--op-yellow);
+  box-shadow: 0 0 12px var(--op-yellow);
+}
+.op-orbit-dot--b {
+  background: var(--op-yellow-dark);
+  box-shadow: 0 0 12px var(--op-yellow-dark);
+}
+
+/* Main image */
+.op-image-inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 340px;
+  height: 410px;
+  border-radius: var(--op-radius);
+  overflow: hidden;
+  box-shadow:
+    0 32px 80px rgba(0, 0, 0, 0.11),
+    0 0 0 1px var(--op-border),
+    0 0 0 7px rgba(245, 200, 0, 0.1);
+}
+
+.op-main-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+.op-image-inner:hover .op-main-img {
+  transform: scale(1.04);
+}
+
+.op-img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    155deg,
+    rgba(245, 200, 0, 0.05) 0%,
+    transparent 55%,
+    rgba(255, 255, 255, 0.12) 100%
+  );
+}
+
+/* Floating cards */
+.op-float-card {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  background: #ffffff;
+  border: 1px solid rgba(245, 200, 0, 0.35);
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--op-text);
+  white-space: nowrap;
+  z-index: 3;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.07), 0 2px 8px var(--op-shadow-yellow);
+  opacity: 1; /* fallback visible; GSAP will animate anyway */
+}
+.op-float-card--top {
+  top: 18px;
+  right: -22px;
+}
+.op-float-card--bot {
+  bottom: 28px;
+  left: -22px;
+}
+
+.op-float-card__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--op-yellow);
+  box-shadow: 0 0 6px var(--op-yellow);
+  flex-shrink: 0;
+  animation: op-pulseDot 2s ease-in-out infinite;
+}
+@keyframes op-pulseDot {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50%       { transform: scale(0.6); opacity: 0.5; }
+}
+.op-float-card__emoji { font-size: 1rem; }
+
+/* Corner accents */
+.op-corner {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  border-style: solid;
+  border-color: var(--op-yellow);
+  opacity: 0.65;
+}
+.op-corner--tl {
+  top: 3px;
+  left: 3px;
+  border-width: 2px 0 0 2px;
+  border-radius: 4px 0 0 0;
+}
+.op-corner--br {
+  bottom: 3px;
+  right: 3px;
+  border-width: 0 2px 2px 0;
+  border-radius: 0 0 4px 0;
+}
+
+/* ============================================
+   RIGHT SIDE — CONTENT
+   ============================================ */
+.op-content-side {
+  flex: 1 1 52%;
+  opacity: 1; /* keep visible without JS animation */
+}
+
+/* Eyebrow */
+.op-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--op-yellow-dark);
+  margin-bottom: 16px;
+}
+.op-eyebrow__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--op-yellow);
+  animation: op-pulseDot 2s ease-in-out infinite;
+}
+
+/* Heading */
+.op-heading {
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.05;
+  margin: 0 0 24px;
+}
+.op-heading__small {
+  font-size: clamp(2.2rem, 4.5vw, 3.6rem);
+  color: var(--op-text);
+  display: block;
+}
+.op-heading__big {
+  font-size: clamp(3rem, 6.5vw, 5rem);
+  color: var(--op-yellow-dark);
+  display: block;
+  -webkit-text-stroke: 1px rgba(212, 169, 0, 0.25);
+}
+
+/* Body */
+.op-body {
+  font-size: 1rem;
+  color: var(--op-muted);
+  line-height: 1.7;
+  margin: 0 0 28px;
+}
+.op-body strong {
+  color: var(--op-text);
+  font-weight: 600;
+}
+
+/* Promise List */
+.op-promise-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.op-promise-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 18px;
+  background: var(--op-card-bg);
+  border: 1px solid var(--op-border);
+  border-radius: 14px;
+  position: relative;
+  overflow: hidden;
+  cursor: default;
+  transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  opacity: 1;
+}
+
+.op-promise-item:hover {
+  background: var(--op-yellow-light);
+  border-color: rgba(245, 200, 0, 0.5);
+  box-shadow: 0 4px 24px var(--op-shadow-yellow);
+}
+
+.op-promise-item__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: rgba(245, 200, 0, 0.15);
+  color: var(--op-yellow-dark);
+  flex-shrink: 0;
+  transition: background 0.3s, color 0.3s;
+}
+.op-promise-item:hover .op-promise-item__icon {
+  background: var(--op-yellow);
+  color: #1a1a2e;
+}
+
+.op-promise-item__text {
+  font-size: 0.97rem;
+  font-weight: 500;
+  color: var(--op-text);
+  flex: 1;
+}
+
+.op-promise-item__bar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 3px;
+  height: 100%;
+  background: var(--op-yellow);
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 0.3s ease;
+  border-radius: 0 2px 2px 0;
+}
+.op-promise-item:hover .op-promise-item__bar {
+  transform: scaleY(1);
+}
+
+/* CTA Button */
+.op-cta {
+  opacity: 1;
+}
+
+.op-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 30px;
+  background: var(--op-yellow);
+  color: #1a1a2e;
+  font-family: "DM Sans", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 6px 30px var(--op-shadow-yellow);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.op-cta-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateX(-100%);
+  transition: transform 0.4s ease;
+  border-radius: inherit;
+}
+.op-cta-btn:hover::before {
+  transform: translateX(0);
+}
+.op-cta-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px var(--op-shadow-yellow);
+}
+.op-cta-btn:active {
+  transform: translateY(0px);
+}
+.op-cta-btn__arrow {
+  transition: transform 0.3s ease;
+}
+.op-cta-btn:hover .op-cta-btn__arrow {
+  transform: translateX(5px);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 960px) {
+  #our-promise-section {
+    padding: 80px 5vw;
+  }
+  .op-container {
+    flex-direction: column;
+    gap: 50px;
+  }
+  .op-image-side,
+  .op-content-side {
+    flex: unset;
+    width: 100%;
+  }
+  .op-image-frame {
+    width: 100%;
+    max-width: 380px;
+    height: 380px;
+    margin: 0 auto;
+  }
+  .op-image-inner {
+    width: 280px;
+    height: 330px;
+  }
+  .op-orbit--1 { width: 360px; height: 360px; margin-top: -180px; margin-left: -180px; }
+  .op-orbit--2 { width: 440px; height: 440px; margin-top: -220px; margin-left: -220px; }
+}
+
+@media (max-width: 500px) {
+  .op-heading__big  { font-size: 3rem; }
+  .op-float-card--top { right: 0; }
+  .op-float-card--bot { left: 0; }
+  .op-image-inner { width: 240px; height: 280px; }
+  .op-cta-btn { font-size: 0.9rem; padding: 13px 22px; }
+}
