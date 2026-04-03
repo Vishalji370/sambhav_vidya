@@ -28,7 +28,7 @@ const Footer = () => {
 
         <div className="footer__contact">
           <p>Email: info@sambhavvidya.com</p>
-          <p className="phone">7982888743</p>
+          <p className="phone">+917982888743</p>
         </div>
       </div>
 

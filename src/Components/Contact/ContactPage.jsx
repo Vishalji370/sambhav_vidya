@@ -74,7 +74,7 @@ export default function ContactPage() {
             
               <div>
                 <h4>Our Office</h4>
-                <span>Address- plot no 1 sector 27 
+                <span>Address- Plot no 1 sector 27 
 Golf course road Gurgaon.</span>
               </div>
             </div>
@@ -83,7 +83,7 @@ Golf course road Gurgaon.</span>
             
               <div>
                 <h4>Email Support</h4>
-                <span>support@sambhavidya.com</span>
+                <span>info@sambhavvidya.com</span>
               </div>
             </div>
 
@@ -91,7 +91,7 @@ Golf course road Gurgaon.</span>
               
               <div>
                 <h4>Call Us</h4>
-                <span>+91 9876543210</span>
+                <span>+91 7982888743</span>
               </div>
             </div>
 
