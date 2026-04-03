@@ -32,9 +32,13 @@ export default function ContactPage() {
 
   const form = e.target;
 
+  const now = new Date();
+
  const data = {
   formType: "contact",
-  submittedAt: new Date().toISOString(),
+  // ISO is UTC; keep it for debugging. Use submittedAt for IST display in Sheet.
+  submittedAt: now.toLocaleString("en-IN", { timeZone: "Asia/Kolkata" }),
+  submittedAtIso: now.toISOString(),
   name: form.name.value,
   organization: form.organization.value,
   phone: form.phone.value,

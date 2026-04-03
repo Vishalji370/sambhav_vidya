@@ -156,9 +156,12 @@ const LookingForPopup = () => {
     setSubmitError(null);
 
     try {
+      const now = new Date();
       await submitToGoogleSheet({
         formType: "lookingForPopup",
-        submittedAt: new Date().toISOString(),
+        // ISO is UTC; keep it for debugging. Use submittedAt for IST display in Sheet.
+        submittedAt: now.toLocaleString("en-IN", { timeZone: "Asia/Kolkata" }),
+        submittedAtIso: now.toISOString(),
         ...form,
       });
 
