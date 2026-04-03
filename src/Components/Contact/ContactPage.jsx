@@ -1,10 +1,14 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { FaFacebook, FaInstagram, FaTwitter, FaGlobe } from "react-icons/fa";
 import "./ContactPage.css";
+import { submitToGoogleSheet } from "../../utils/submitToGoogleSheet";
 
 export default function ContactPage() {
   const containerRef = useRef();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState(null);
 
   useEffect(() => {
     const cards = containerRef.current.querySelectorAll(".unique-contact-card");
@@ -24,10 +28,13 @@ export default function ContactPage() {
 
   const handleSubmit = async (e) => {
   e.preventDefault();
+  if (isSubmitting) return;
 
   const form = e.target;
 
  const data = {
+  formType: "contact",
+  submittedAt: new Date().toISOString(),
   name: form.name.value,
   organization: form.organization.value,
   phone: form.phone.value,
@@ -36,13 +43,17 @@ export default function ContactPage() {
   message: form.message.value,
 };
 
-  await fetch("https://script.google.com/macros/s/AKfycbz-uT72dWVRXsa40wacVw9ZxmmO4ZV7oMIz-qtm7NS-rmH6OUhctUmMn69oekB4tHtHlg/exec", {
-    method: "POST",
-    body: JSON.stringify(data),
-  });
-
-  alert("Message Sent ✅");
-  form.reset();
+  setIsSubmitting(true);
+  setSubmitError(null);
+  try {
+    await submitToGoogleSheet(data);
+    setSubmitted(true);
+    form.reset();
+  } catch (err) {
+    setSubmitError(err instanceof Error ? err.message : "Failed to send message. Please try again.");
+  } finally {
+    setIsSubmitting(false);
+  }
 };
 
   return (
@@ -118,22 +129,43 @@ Golf course road Gurgaon.</span>
           <div className="unique-contact-right">
             <h2 className="section-title">Send Us a Message</h2>
 
-           <form className="unique-contact-form" onSubmit={handleSubmit}>
-              <div className="form-row">
-                <input name="name" type="text" placeholder="Your Name" />
-                <input name="organization" type="text" placeholder="Organization / Institution (Optional)" />
+            {!submitted ? (
+              <form className="unique-contact-form" onSubmit={handleSubmit}>
+                <div className="form-row">
+                  <input name="name" type="text" placeholder="Your Name" required />
+                  <input name="organization" type="text" placeholder="Organization / Institution (Optional)" />
+                </div>
+
+                <div className="form-row">
+                  <input name="phone" type="tel" placeholder="Phone Number" required />
+                  <input name="email" type="email" placeholder="Email Address" required />
+                </div>
+
+                <input name="subject" type="text" placeholder="Subject" required />
+                <textarea name="message" placeholder="Write your message, inquiry, or partnership request." required></textarea>
+
+                {submitError ? <div className="unique-contact-error">{submitError}</div> : null}
+
+                <button className="unique-send-btn" disabled={isSubmitting} aria-disabled={isSubmitting}>
+                  {isSubmitting ? "Sending..." : "Send Message"}
+                </button>
+              </form>
+            ) : (
+              <div className="unique-contact-success">
+                <h3>Thanks for connecting!</h3>
+                <p>We&apos;ve received your message. Our team will get back to you shortly.</p>
+                <button
+                  type="button"
+                  className="unique-send-btn"
+                  onClick={() => {
+                    setSubmitted(false);
+                    setSubmitError(null);
+                  }}
+                >
+                  Send another message
+                </button>
               </div>
-
-              <div className="form-row">
-                <input name="phone" type="tel" placeholder="Phone Number" />
-                <input name="email" type="email" placeholder="Email Address" />
-              </div>
-
-              <input name="subject" type="text" placeholder="Subject" />
-              <textarea name="message" placeholder="Write your message, inquiry, or partnership request."></textarea>
-
-              <button className="unique-send-btn">Send Message</button>
-            </form>
+            )}
           </div>
         </div>
       </section>

@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import "./Home/LookingFor.css";
+import { submitToGoogleSheet } from "../utils/submitToGoogleSheet";
 
 /** Same event name everywhere — dispatch to open from any page */
 export const OPEN_LOOKINGFOR_POPUP = "open-lookingfor-popup";
@@ -86,6 +87,8 @@ const LookingForPopup = () => {
   const [popup, setPopup] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [form, setForm] = useState(initialForm);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const overlayRef = useRef<HTMLDivElement | null>(null);
   const popupRef = useRef<HTMLDivElement | null>(null);
@@ -145,20 +148,36 @@ const LookingForPopup = () => {
     form.state.trim() !== "" &&
     form.areYou.trim() !== "";
 
-  const handleSubmit = (e?: React.FormEvent | React.MouseEvent) => {
+  const handleSubmit = async (e?: React.FormEvent | React.MouseEvent) => {
     e?.preventDefault();
     if (!isFormValid || !popupRef.current) return;
-    gsap.fromTo(
-      popupRef.current,
-      { scale: 1 },
-      {
-        scale: 1.02,
-        duration: 0.15,
-        yoyo: true,
-        repeat: 1,
-        onComplete: () => setSubmitted(true),
-      }
-    );
+
+    setIsSubmitting(true);
+    setSubmitError(null);
+
+    try {
+      await submitToGoogleSheet({
+        formType: "lookingForPopup",
+        submittedAt: new Date().toISOString(),
+        ...form,
+      });
+
+      gsap.fromTo(
+        popupRef.current,
+        { scale: 1 },
+        {
+          scale: 1.02,
+          duration: 0.15,
+          yoyo: true,
+          repeat: 1,
+          onComplete: () => setSubmitted(true),
+        }
+      );
+    } catch (err) {
+      setSubmitError(err instanceof Error ? err.message : "Failed to submit. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (!popup) return null;
@@ -293,6 +312,12 @@ const LookingForPopup = () => {
                     <span>Get expert guidance and complete support throughout your admission process.</span>
                   </div>
                 </div>
+
+                {submitError ? (
+                  <div style={{ color: "#b42318", fontWeight: 600, fontSize: "0.9rem", marginTop: "6px" }}>
+                    {submitError}
+                  </div>
+                ) : null}
               </form>
             </div>
 
@@ -301,11 +326,11 @@ const LookingForPopup = () => {
                 type="button"
                 className="lf__form-submit"
                 onClick={handleSubmit}
-                disabled={!isFormValid}
-                aria-disabled={!isFormValid}
+                disabled={!isFormValid || isSubmitting}
+                aria-disabled={!isFormValid || isSubmitting}
               >
                 <IconSend />
-                Submit
+                {isSubmitting ? "Submitting..." : "Submit"}
               </button>
             </div>
           </>

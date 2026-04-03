@@ -230,9 +230,43 @@
   transition: 0.3s;
 }
 
+.unique-send-btn:disabled,
+.unique-send-btn[aria-disabled="true"] {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
 .unique-send-btn:hover {
   transform: translateY(-3px);
   box-shadow: 0 10px 25px rgba(244, 67, 54, 0.4);
+}
+
+.unique-contact-error {
+  color: #b42318;
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-top: -6px;
+}
+
+.unique-contact-success {
+  background: rgba(255, 204, 9, 0.12);
+  border: 1px solid rgba(255, 204, 9, 0.35);
+  border-radius: 16px;
+  padding: 18px;
+  text-align: center;
+}
+
+.unique-contact-success h3 {
+  margin: 0 0 6px;
+  color: #545453;
+}
+
+.unique-contact-success p {
+  margin: 0 0 14px;
+  color: rgba(84, 84, 83, 0.92);
+  line-height: 1.5;
 }
 
 /* MAP */
